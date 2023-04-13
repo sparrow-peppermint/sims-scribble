@@ -2,6 +2,7 @@ import express from 'express'
 import * as db from '../db/game'
 const router = express.Router()
 
+// api/v1/game
 router.get('/', async (req, res) => {
   const data = await db.getData()
   res.json(data)
