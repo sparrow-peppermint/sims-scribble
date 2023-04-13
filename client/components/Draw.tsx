@@ -1,5 +1,11 @@
+import Canvas from './Canvas'
+
 function Draw() {
-  return <></>
+  return (
+    <>
+      <Canvas />
+    </>
+  )
 }
 
 export default Draw
