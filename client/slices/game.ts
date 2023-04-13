@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type InitialState = {
-  players: 0
+  players: number
 }
 
 const gameSlice = createSlice({
   name: 'startSlice',
-  initialState: { players: 0 },
+  initialState: { players: 0 } as InitialState,
   reducers: {
     players: (_, { payload }: PayloadAction<number>) => {
       return {
