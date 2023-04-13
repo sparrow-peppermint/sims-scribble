@@ -10,15 +10,15 @@ import Write from './Write'
 function App() {
   return (
     <>
-        <h1>Its HAPPENING!!!!!!!!!!!</h1>
+      <Header />
+      <h1>Its HAPPENING!!!!!!!!!!!</h1>
       <Routes>
-        <Header />
-        <Home />
-        <Start />
-        <Pass />
-        <Draw />
-        <Write />
-        <Display />
+        <Route path="/" element={<Home />} />
+        <Route path="/start" element={<Start />} />
+        <Route path="/pass/:id" element={<Pass />} />
+        <Route path="/draw/:id" element={<Draw />} />
+        <Route path="/write/:id" element={<Write />} />
+        <Route path="/display" element={<Display />} />
       </Routes>
     </>
   )
