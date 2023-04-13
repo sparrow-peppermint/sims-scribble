@@ -1,7 +1,7 @@
 function Header() {
   return (
     <>
-      <h1>This be a header</h1>
+      <h1 className="bg-pink-600">SIMS SCRIBBLE</h1>
     </>
   )
 }

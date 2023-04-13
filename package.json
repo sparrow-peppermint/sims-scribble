@@ -19,7 +19,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "webpack": "webpack --config ./client/webpack.config.js",
     "knex": "knex --knexfile ./server/db/knexfile.js",
-    "tailwind": "npx tailwindcss -i ./server/public/css/input.css -o ./server/public/css/output.css --watch"
+    "tailwind": "tailwindcss -i ./server/public/input.css -o ./server/public/output.css --watch"
   },
   "babel": {
     "presets": [
