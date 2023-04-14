@@ -3,7 +3,7 @@ import Canvas from './Canvas'
 function Draw() {
   return (
     <>
-      <Canvas />
+      <Canvas width={700} height={500} />
     </>
   )
 }
