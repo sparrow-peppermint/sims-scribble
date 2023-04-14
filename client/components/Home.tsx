@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useAppDispatch } from '../hooks'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
   const [input, setInput] = useState(0)
+  const navigate = useNavigate()
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const value = Number(event.target.value)
@@ -14,6 +16,7 @@ function Home() {
     // dispatch()
     // send number to db
     setInput(() => 0)
+    navigate('/start')
   }
 
   return (
@@ -25,6 +28,7 @@ function Home() {
         <form>
           <p>Enter the number of players</p>
           <input
+            className="border-2"
             type="number"
             min="4"
             max="12"
