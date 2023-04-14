@@ -26,6 +26,8 @@ function Home() {
           <p>Enter the number of players</p>
           <input
             type="number"
+            min="4"
+            max="12"
             onChange={handleChange}
             // value={input}
           />

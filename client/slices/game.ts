@@ -6,7 +6,7 @@ export type InitialState = {
 
 const gameSlice = createSlice({
   name: 'startSlice',
-  initialState: { players: 0 } as InitialState,
+  initialState: { players: 4 } as InitialState,
   reducers: {
     players: (_, { payload }: PayloadAction<number>) => {
       return {
