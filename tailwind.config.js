@@ -6,6 +6,9 @@ module.exports = {
     fontFamily: {
       header: ['Cloudstorm', 'sans-serif'],
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [],
 }
