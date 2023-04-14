@@ -413,6 +413,12 @@ video {
   display: none;
 }
 
+@font-face {
+  font-family: Cloudstorm;
+
+  src: url('./fonts/Cloudstorm.ttf');
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -507,17 +513,29 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.bg-green-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+.min-h-screen {
+  min-height: 100vh;
 }
 
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+.border {
+  border-width: 1px;
 }
 
-.bg-pink-600 {
+.bg-cyan-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(219 39 119 / var(--tw-bg-opacity));
+  background-color: rgb(103 232 249 / var(--tw-bg-opacity));
+}
+
+.font-header {
+  font-family: Cloudstorm, sans-serif;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
