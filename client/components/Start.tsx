@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '../hooks'
 
 function Start() {
-  const dispatch = useDispatch()
+  // const dispatch = useAppDispatch()
   const [input, setInput] = useState('')
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -10,7 +10,7 @@ function Start() {
     setInput(() => value)
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault()
     // dispatch()
     setInput(() => '')
@@ -24,7 +24,7 @@ function Start() {
         </p>
       </div>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form>
           <label>
             What to draw:
             <input
@@ -35,7 +35,7 @@ function Start() {
             />
           </label>
 
-          <button type="submit" aria-label="submit">
+          <button onClick={handleSubmit} type="submit" aria-label="submit">
             Submit
           </button>
         </form>
