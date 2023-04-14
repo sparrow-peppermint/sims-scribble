@@ -20,7 +20,7 @@ function Start() {
     <>
       <div>
         <p>
-          Here's where you enter a description as to what you want P2 to draw
+          Heres where you enter a description as to what you want P2 to draw
         </p>
       </div>
       <div>
