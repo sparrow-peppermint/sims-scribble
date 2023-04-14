@@ -20,15 +20,27 @@ describe('Testing the Start component', () => {
   })
   test.todo('After the submit button is being clicked, page redirects')
 
-
-  test('Test if user input updates state',()=>{
+  test('Test if user input updates state', () => {
     render(
       <Router>
         <Start />
       </Router>
     )
+    const input = screen.getByRole('textbox') as HTMLInputElement
+    fireEvent.change(input, { target: { value: 'Testing testing 123' } })
+    expect(input.value).toBe('Testing testing 123')
+  })
 
-    const input = screen.getByRole('textbox')
+  test('If placeholder is displaying', () => {
+    render(
+      <Router>
+        <Start />
+      </Router>
+    )
+    const input = screen.getByPlaceholderText(
+      'Enter prompt for user to draw'
+    ) as HTMLInputElement
+
+    expect(input.placeholder).toBe('Enter prompt for user to draw')
   })
 })
-
