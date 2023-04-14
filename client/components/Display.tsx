@@ -1,5 +1,24 @@
+import { useEffect, useState } from 'react'
+import { getData } from '../../client/apis/api'
+import { useAppDispatch } from '../hooks'
+
 function Display() {
-  return <></>
+  const [data, setData] = useState([])
+  useEffect(() => {
+    getData()
+      .then((res) => setData(res))
+      .catch((err) => err.message)
+  }, [])
+
+  if (data.length > 0) {
+    console.log(data[1].file)
+
+    return (
+      <>
+        <img src={`${data[1].file}`} />{' '}
+      </>
+    )
+  }
 }
 
 export default Display
