@@ -1,7 +1,9 @@
 function Header() {
   return (
     <>
-      <h1>This be a header</h1>
+      <h1 className="font-header text-white text-6xl text-center p-4">
+        SIMS SCRIBBLE
+      </h1>
     </>
   )
 }

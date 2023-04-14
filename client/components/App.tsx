@@ -9,9 +9,8 @@ import Write from './Write'
 
 function App() {
   return (
-    <>
+    <div className="h-screen bg-cyan-300 ">
       <Header />
-      <h1>Its HAPPENING!!!!!!!!!!!</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/start" element={<Start />} />
@@ -20,7 +19,7 @@ function App() {
         <Route path="/write/:id" element={<Write />} />
         <Route path="/display" element={<Display />} />
       </Routes>
-    </>
+    </div>
   )
 }
 

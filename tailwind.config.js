@@ -3,7 +3,9 @@
 module.exports = {
   content: ['./client/**/*.{html,ts,tsx,js}'],
   theme: {
-    extend: {},
+    fontFamily: {
+      header: ['Cloudstorm', 'sans-serif'],
+    },
   },
   plugins: [],
 }
