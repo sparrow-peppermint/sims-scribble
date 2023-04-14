@@ -9,7 +9,7 @@ import Write from './Write'
 
 function App() {
   return (
-    <div className="min-h-screen bg-cyan-300 ">
+    <div className="h-screen bg-cyan-300 ">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
