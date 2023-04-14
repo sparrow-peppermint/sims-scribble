@@ -1,15 +1,15 @@
 import { useEffect, useRef } from 'react'
 
-export function useOnDraw(onDraw) {
-  const canvasRef = useRef(null)
+export function useOnDraw(onDraw: any) {
+  const canvasRef = useRef(null) as React.MutableRefObject<any>
 
   const isDrawingRef = useRef(false)
 
-  const mouseMoveListenerRef = useRef(null)
-  const mouseDownListenerRef = useRef(null)
-  const mouseUpListenerRef = useRef(null)
+  const mouseMoveListenerRef = useRef(null) as React.MutableRefObject<any>
+  const mouseDownListenerRef = useRef(null) as React.MutableRefObject<any>
+  const mouseUpListenerRef = useRef(null) as React.MutableRefObject<any>
 
-  const prevPointRef = useRef(null)
+  const prevPointRef = useRef(null) as React.MutableRefObject<any>
 
   useEffect(() => {
     return () => {
@@ -22,7 +22,7 @@ export function useOnDraw(onDraw) {
     }
   }, [])
 
-  function setCanvasRef(ref) {
+  function setCanvasRef(ref: any) {
     if (!ref) return
     if (canvasRef.current) {
       canvasRef.current.removeEventListener(
@@ -37,7 +37,7 @@ export function useOnDraw(onDraw) {
   }
 
   function initMouseMoveListener() {
-    const mouseMoveListener = (e) => {
+    const mouseMoveListener = (e: any) => {
       if (isDrawingRef.current) {
         const point = computePointInCavas(e.clientX, e.clientY)
         const ctx = canvasRef.current.getContext('2d')
@@ -67,7 +67,7 @@ export function useOnDraw(onDraw) {
     window.addEventListener('mouseup', listener)
   }
 
-  function computePointInCavas(clientX, clientY) {
+  function computePointInCavas(clientX: any, clientY: any) {
     if (canvasRef.current) {
       const boundingRect = canvasRef.current.getBoundingClientRect()
       return {

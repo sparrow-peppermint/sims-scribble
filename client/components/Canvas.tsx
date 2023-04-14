@@ -33,13 +33,27 @@ function Canvas({ width, height }: Props) {
     ctx.stroke()
   }
 
+  function handleClick() {
+    const canvas = document.getElementById('canvas') as HTMLCanvasElement
+    const image = new Image()
+    if (canvas) {
+      image.src = canvas.toDataURL()
+      console.log(image)
+    }
+  }
+
   return (
-    <canvas
-      width={width}
-      height={height}
-      style={canvasStyle}
-      ref={setCanvasRef}
-    />
+    <>
+      <canvas
+        data-testid="canvas"
+        id="canvas"
+        width={width}
+        height={height}
+        style={canvasStyle}
+        ref={setCanvasRef}
+      />
+      <button onClick={handleClick}>Save as Image Test</button>
+    </>
   )
 }
 
