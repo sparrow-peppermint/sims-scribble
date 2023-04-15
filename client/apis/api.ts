@@ -8,7 +8,7 @@ export async function getData() {
 }
 
 export async function getDataById(id: number) {
-  const response = await request.get(rootUrl + `/:${id}`)
+  const response = await request.get(rootUrl + `/${id}`)
   return response.body
 }
 
