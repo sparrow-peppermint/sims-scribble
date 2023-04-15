@@ -1,10 +1,11 @@
 import { useOnDraw } from './Hooks'
-import { getDataById } from '../apis/api'
 import SubmitButton from './SubmitButton'
+import { useState } from 'react'
 
 interface Props {
   width: number
   height: number
+  id: number
 }
 
 interface Point {
@@ -12,8 +13,9 @@ interface Point {
   y: number
 }
 
-function Canvas({ width, height }: Props) {
+function Canvas({ width, height, id }: Props) {
   const setCanvasRef = useOnDraw(onDraw)
+  const [drawing, setDrawing] = useState('')
 
   function onDraw(ctx: any, point: Point, prevPoint: any) {
     drawLine(prevPoint, point, ctx, '#000000', 5)
@@ -40,7 +42,7 @@ function Canvas({ width, height }: Props) {
     const image = new Image()
     if (canvas) {
       image.src = canvas.toDataURL()
-      console.log(image)
+      setDrawing(() => image.src)
     }
   }
 
@@ -53,6 +55,11 @@ function Canvas({ width, height }: Props) {
         height={height}
         style={canvasStyle}
         ref={setCanvasRef}
+      />
+      <button onClick={handleClick}>Finish drawing</button>
+      <SubmitButton
+        data={{ name: null, file: drawing, caption: null }}
+        id={id}
       />
     </>
   )
