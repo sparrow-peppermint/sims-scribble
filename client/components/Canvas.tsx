@@ -55,8 +55,8 @@ function Canvas({ width, height, id }: Props) {
         height={height}
         style={canvasStyle}
         ref={setCanvasRef}
+        onMouseUp={handleClick}
       />
-      <button onClick={handleClick}>Finish drawing</button>
       <SubmitButton
         data={{ name: null, file: drawing, caption: null }}
         id={id}
