@@ -1,4 +1,5 @@
 import { useOnDraw } from './Hooks'
+import { getDataById } from '../apis/api'
 
 interface Props {
   width: number
@@ -14,7 +15,7 @@ function Canvas({ width, height }: Props) {
   const setCanvasRef = useOnDraw(onDraw)
 
   function onDraw(ctx: any, point: Point, prevPoint: any) {
-    drawLine(prevPoint, point, ctx, '#ff0000', 5)
+    drawLine(prevPoint, point, ctx, '#000000', 5)
   }
 
   function drawLine(
