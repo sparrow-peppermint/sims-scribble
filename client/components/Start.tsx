@@ -27,12 +27,11 @@ function Start() {
               value={input}
             />
           </label>
-
-          <SubmitButton
-            data={{ name: null, file: null, caption: input }}
-            id={1}
-          />
         </form>
+        <SubmitButton
+          data={{ name: null, file: null, caption: input }}
+          id={1}
+        />
       </div>
     </>
   )
