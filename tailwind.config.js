@@ -9,6 +9,11 @@ module.exports = {
     container: {
       center: true,
     },
+    extend: {
+      backgroundImage: {
+        paint: "url('/images/paint.jpg')",
+      },
+    },
   },
   plugins: [],
 }

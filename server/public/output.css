@@ -595,6 +595,14 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-paint {
+  background-image: url('/images/paint.jpg');
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
 .p-4 {
   padding: 1rem;
 }
