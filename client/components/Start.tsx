@@ -1,22 +1,12 @@
 import { useState } from 'react'
-import { useAppDispatch } from '../hooks'
-import { useNavigate } from 'react-router-dom'
+import SubmitButton from './SubmitButton'
 
 function Start() {
-  // const dispatch = useAppDispatch()
   const [input, setInput] = useState('')
-  const navigate = useNavigate()
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value
     setInput(() => value)
-  }
-
-  function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
-    event.preventDefault()
-    // dispatch()
-    setInput(() => '')
-    navigate('/pass/2')
   }
 
   return (
@@ -38,9 +28,10 @@ function Start() {
             />
           </label>
 
-          <button onClick={handleSubmit} type="submit" aria-label="submit">
-            Submit
-          </button>
+          <SubmitButton
+            data={{ name: null, file: null, caption: input }}
+            id={1}
+          />
         </form>
       </div>
     </>

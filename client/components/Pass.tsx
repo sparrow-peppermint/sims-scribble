@@ -9,7 +9,7 @@ function Pass() {
 
   return (
     <>
-      {Number(id) < totalPlayers ? (
+      {Number(id) <= totalPlayers ? (
         <NextPlayer id={Number(id)} />
       ) : (
         <FinalPass />
