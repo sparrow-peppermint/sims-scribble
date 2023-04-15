@@ -31,3 +31,23 @@ it('GET / should return data from the database', async () => {
   expect(response.status).toBe(200)
   expect(response.body).toEqual(mockData)
 })
+
+it('GET /:id should return the correct', async () => {
+  jest.mocked(db.getDataById(2))
+  const response = await request(server).get('/api/v1/game/2')
+
+  expect(response.status).toBe(200)
+})
+
+it('Post / should reply with a status of 201', async () => {
+  const data = {
+    name: null,
+    file: null,
+    caption: 'test',
+  }
+
+  jest.mocked(db.addData(data))
+  const response = await request(server).post('/api/v1/game/').send({ data })
+
+  expect(response.status).toBe(201)
+})
