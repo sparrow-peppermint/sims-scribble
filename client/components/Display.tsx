@@ -11,7 +11,9 @@ function Display() {
   }, [])
 
   if (data.length > 0) {
-    console.log(data[1].file)
+    console.log(data)
+
+    console.log(data[5].file)
 
     return (
       <>
