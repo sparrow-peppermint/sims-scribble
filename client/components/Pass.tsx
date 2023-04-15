@@ -1,11 +1,19 @@
+import { useParams } from 'react-router-dom'
 import FinalPass from './FinalPass'
+import NextPlayer from './NextPlayer'
+import { useAppSelector } from '../hooks'
 
 function Pass() {
-  //Todo add a boolean that checks if the number of players in the state is less that the id in the url { id } useParams
+  const { id } = useParams()
+  const totalPlayers = useAppSelector((state) => state.players)
 
   return (
     <>
-      <FinalPass />
+      {Number(id) < totalPlayers ? (
+        <NextPlayer id={Number(id)} />
+      ) : (
+        <FinalPass />
+      )}
     </>
   )
 }
