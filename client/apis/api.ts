@@ -1,4 +1,5 @@
 import request from 'superagent'
+import { Input, Data } from '../../models/Data'
 
 const rootUrl = '/api/v1/game'
 
@@ -11,3 +12,8 @@ export async function getDataById(id: number) {
   const response = await request.get(rootUrl + `/${id}`)
   return response.body
 }
+
+export async function addData(data: Input) {
+  await request.post(rootUrl).send(data)
+}
+
