@@ -1,9 +1,9 @@
 import connection from './connection'
 
 interface Data {
-  name: string
-  file: string
-  caption: string
+  name: string | null
+  file: string | null
+  caption: string | null
 }
 
 export function getData(db = connection) {
