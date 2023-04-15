@@ -6,12 +6,10 @@ export type InitialState = {
 
 const gameSlice = createSlice({
   name: 'startSlice',
-  initialState: { players: 4 } as InitialState,
+  initialState: 0,
   reducers: {
     players: (_, { payload }: PayloadAction<number>) => {
-      return {
-        players: payload,
-      }
+      return payload
     },
   },
 })

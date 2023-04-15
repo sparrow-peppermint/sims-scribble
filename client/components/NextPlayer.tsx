@@ -1,8 +1,7 @@
 import { useNavigate } from 'react-router-dom'
+import { Id } from '../../models/Type'
 
-interface Id {
-  id: number
-}
+
 
 function NextPlayer(props: Id) {
   const navigate = useNavigate()
