@@ -10,17 +10,17 @@ function Display() {
       .catch((err) => err.message)
   }, [])
 
-  if (data.length > 0) {
-    console.log(data)
-
-    console.log(data[5].file)
-
-    return (
-      <>
-        <img src={`${data[1].file}`} />{' '}
-      </>
-    )
-  }
+  return (
+    <div>
+      {data.map(({ id, name, file, caption }) => {
+        if (id % 2 == 0) {
+          return <img key={id} src={file} alt="" />
+        } else {
+          return <p key={id}>{caption}</p>
+        }
+      })}
+    </div>
+  )
 }
 
 export default Display
