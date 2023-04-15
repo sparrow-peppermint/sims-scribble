@@ -16,9 +16,3 @@ export async function getDataById(id: number) {
 export async function addData(data: Input) {
   await request.post(rootUrl).send(data)
 }
-
-// export function getFruits(): Promise<string[]> {
-//   return request.get(rootUrl + '/fruits').then((res) => {
-//     return res.body.fruits
-//   })
-// }

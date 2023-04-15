@@ -1,5 +1,6 @@
 import { useOnDraw } from './Hooks'
 import { getDataById } from '../apis/api'
+import SubmitButton from './SubmitButton'
 
 interface Props {
   width: number
@@ -53,7 +54,6 @@ function Canvas({ width, height }: Props) {
         style={canvasStyle}
         ref={setCanvasRef}
       />
-      <button onClick={handleClick}>Save as Image Test</button>
     </>
   )
 }
