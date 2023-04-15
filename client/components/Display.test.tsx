@@ -27,6 +27,7 @@ describe('Testing Display component', () => {
 
   test('if the image is rendering on the page', async () => {
     render(<Display />)
+    //the test doesn't like this as the findByRole should also include a src or alt attribute to reference - need to check this
     const image = await screen.findByRole('img')
     expect(image).toBeInTheDocument()
   })

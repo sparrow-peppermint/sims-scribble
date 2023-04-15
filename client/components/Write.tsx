@@ -29,6 +29,7 @@ function Write() {
         placeholder="frog smoking a pipe..."
       ></input>
       <p>Then hit submit</p>
+
       <SubmitButton
         data={{ name: null, file: null, caption: input }}
         id={Number(id)}
