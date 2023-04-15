@@ -1,4 +1,5 @@
 import request from 'superagent'
+import { Input, Data } from '../../models/Data'
 
 const rootUrl = '/api/v1/game'
 
@@ -12,8 +13,6 @@ export async function getDataById(id: number) {
   return response.body
 }
 
-// export function getFruits(): Promise<string[]> {
-//   return request.get(rootUrl + '/fruits').then((res) => {
-//     return res.body.fruits
-//   })
-// }
+export async function addData(data: Input) {
+  await request.post(rootUrl).send(data)
+}
