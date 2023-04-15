@@ -37,5 +37,4 @@ describe('Testing the NextPlayer component', () => {
 
     expect(button.innerHTML).toMatch(/pass/i)
   })
-  // test.todo('blah', () => {})
 })
