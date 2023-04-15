@@ -4,17 +4,32 @@ const router = express.Router()
 
 // api/v1/game
 router.get('/', async (req, res) => {
-  const data = await db.getData()
-  res.json(data)
+  try {
+    const data = await db.getData()
+    res.json(data)
+  } catch (error) {
+    if (error instanceof Error) res.status(500).send('DataBase Error')
+  }
 })
 
-// router.get('/:id', async (req, res) => {
-//   const id = +req.params.id
-// })
+router.get('/:id', async (req, res) => {
+  const id = +req.params.id
+  try {
+    const data = await db.getDataById(id)
+    res.json(data)
+  } catch (error) {
+    if (error instanceof Error) res.status(500).send('DataBase Error')
+  }
+})
 
-// router.post('/', async (req, res) => {
-//   //db function
-//   const input = req.body
-// })
+router.post('/', async (req, res) => {
+  const input = req.body
+  try {
+    await db.addData(input)
+    res.status(201).send('Okay')
+  } catch (error) {
+    if (error instanceof Error) res.status(500).send('DataBase Error')
+  }
+})
 
 export default router
