@@ -11,7 +11,7 @@ function Display() {
   }, [])
 
   return (
-    <>
+    <div>
       {data.map(({ id, name, file, caption }) => {
         if (id % 2 == 0) {
           return <img key={id} src={file} alt="" />
@@ -19,7 +19,7 @@ function Display() {
           return <p key={id}>{caption}</p>
         }
       })}
-    </>
+    </div>
   )
 }
 
