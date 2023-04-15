@@ -20,7 +20,7 @@ describe('Testing the Start component', () => {
   })
   test.todo('After the submit button is being clicked, page redirects')
 
-  test('Test if user input updates state', () => {
+  test('if user input updates state', () => {
     render(
       <Router>
         <Start />
