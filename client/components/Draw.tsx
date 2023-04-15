@@ -22,8 +22,8 @@ function Draw() {
 
   return (
     <>
-       <p>{state.caption}</p>
-      <Canvas width={700} height={500} />
+      <p>{state.caption}</p>
+      <Canvas width={700} height={500} id={Number(id)} />
     </>
   )
 }

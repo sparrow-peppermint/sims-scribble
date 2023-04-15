@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import { getDataById } from '../apis/api'
 import { useParams } from 'react-router-dom'
 import SubmitButton from './SubmitButton'
-import { useState } from 'react'
+import { Input } from '../../models/Data'
 
 function Write() {
   const [input, setInput] = useState('')
   const { id } = useParams()
-  const [image, setImage] = useState({})
-  
+  const [image, setImage] = useState({} as Input)
+
   useEffect(() => {
     getDataById(Number(id) - 1)
       .then((res) => setImage(res))
@@ -20,10 +20,9 @@ function Write() {
     setInput(() => value)
   }
 
-
   return (
     <>
-      <img src={image.file} alt="previous players drawing" />
+      {image.file && <img src={image.file} alt="previous players drawing" />}
       <h2>Add a caption for this drawing</h2>
       <input
         onChange={handleChange}
