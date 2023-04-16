@@ -1,43 +1,62 @@
-import { useOnDraw } from './Hooks'
+import { useEffect, useRef, useState } from 'react'
 import SubmitButton from './SubmitButton'
-import { useState } from 'react'
+import { Id } from '../../models/Type'
 
-interface Props {
-  width: number
-  height: number
-  id: number
-}
-
-interface Point {
-  x: number
-  y: number
-}
-
-function Canvas({ width, height, id }: Props) {
-  const setCanvasRef = useOnDraw(onDraw)
+function Canvas({ id }: Id) {
+  const [mouseData, setMouseData] = useState({ x: 0, y: 0 })
+  const canvasRef = useRef(null) as any
+  const [canvasCTX, setCanvasCTX] = useState(null)
+  const [color, setColor] = useState('#000000')
+  const [size, setSize] = useState(10)
   const [drawing, setDrawing] = useState('')
 
-  function onDraw(ctx: any, point: Point, prevPoint: any) {
-    drawLine(prevPoint, point, ctx, '#000000', 5)
+  useEffect(() => {
+    const canvas = canvasRef.current as HTMLCanvasElement | null
+    if (canvas) {
+      const ctx = canvas.getContext('2d') as any
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      setCanvasCTX(ctx)
+    }
+  }, [canvasRef])
+
+  const SetPos = (e: any) => {
+    const position = computePointInCavas(e.clientX, e.clientY)
+    if (position) setMouseData(position)
   }
 
-  function drawLine(
-    start: Point,
-    end: Point,
-    ctx: any,
-    color: string,
-    width: number
-  ) {
-    start = start ?? end
-    ctx.beginPath()
-    ctx.lineWidth = width
-    ctx.strokeStyle = color
-    ctx.moveTo(start.x, start.y)
-    ctx.lineTo(end.x, end.y)
-    ctx.stroke()
+  const Draw = (e: any) => {
+    SetPos(e)
+    if (e.buttons !== 1) return
+    const ctx = canvasCTX as any
+    const position = computePointInCavas(e.clientX, e.clientY)
+    if (position) setMouseData(position)
+    if (ctx && position) {
+      ctx.beginPath()
+      ctx.moveTo(mouseData.x, mouseData.y)
+      setMouseData(position)
+      ctx.lineTo(position.x, position.y)
+      ctx.strokeStyle = color
+      ctx.lineWidth = size
+      ctx.lineCap = 'round'
+      ctx.stroke()
+    }
   }
 
-  function handleClick() {
+  function computePointInCavas(clientX: number, clientY: number) {
+    if (canvasRef.current && clientX && clientY) {
+      const boundingRect = canvasRef.current.getBoundingClientRect()
+
+      return {
+        x: clientX - boundingRect.left,
+        y: clientY - boundingRect.top,
+      }
+    } else {
+      return null
+    }
+  }
+
+  function handleMouseUp() {
     const canvas = document.getElementById('canvas') as HTMLCanvasElement
     const image = new Image()
     if (canvas) {
@@ -46,28 +65,56 @@ function Canvas({ width, height, id }: Props) {
     }
   }
 
+  function handleSize(evnt: React.ChangeEvent<HTMLInputElement>) {
+    evnt.preventDefault()
+    setSize(() => +evnt.target.value)
+  }
+
   return (
-    <>
+    <div>
       <canvas
-        className="bg-paint bg-contain"
+        className="bg-no-repeat bg-paint bg-contain"
         data-testid="canvas"
         id="canvas"
-        width={width}
-        height={height}
-        style={canvasStyle}
-        ref={setCanvasRef}
-        onMouseUp={handleClick}
-      />
+        ref={canvasRef}
+        onMouseEnter={(e) => SetPos(e)}
+        onMouseDown={(e) => SetPos(e)}
+        onMouseMove={(e) => Draw(e)}
+        onMouseUp={handleMouseUp}
+      ></canvas>
+
+      <div className="controlpanel" style={{}}>
+        <input type="range" value={size} max={40} onChange={handleSize} />
+        <input
+          type="color"
+          value={color}
+          onChange={(e) => {
+            setColor(e.target.value)
+          }}
+        />
+        <button
+          onClick={() => {
+            const ctx: any = canvasCTX
+            if (ctx && canvasRef.current) {
+              ctx.clearRect(
+                0,
+                0,
+                canvasRef.current.width,
+                canvasRef.current.height
+              )
+            }
+          }}
+        >
+          Clear
+        </button>
+      </div>
+
       <SubmitButton
         data={{ name: null, file: drawing, caption: null }}
         id={id}
       />
-    </>
+    </div>
   )
 }
 
 export default Canvas
-
-const canvasStyle = {
-  border: '1px solid black',
-}
