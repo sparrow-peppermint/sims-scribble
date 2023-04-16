@@ -616,10 +616,6 @@ video {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
-.border {
-  border-width: 1px;
-}
-
 .bg-teal {
   --tw-bg-opacity: 1;
   background-color: rgb(0 128 128 / var(--tw-bg-opacity));
@@ -632,6 +628,7 @@ video {
 .bg-contain {
   background-size: contain;
 }
+
 
 .bg-cover {
   background-size: cover;
