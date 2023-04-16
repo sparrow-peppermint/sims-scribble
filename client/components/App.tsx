@@ -13,7 +13,7 @@ function App() {
     <div className="min-h-screen bg-cover bg-teal">
       <Header />
 
-      <div className="containter border-4 flex flex-col mx-48">
+      <div className="containter flex flex-col mx-48">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/start" element={<Start />} />
