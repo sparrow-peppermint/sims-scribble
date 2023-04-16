@@ -27,7 +27,7 @@ function Home() {
   return (
     <div className="h-screen">
       <div className="container flex justify-center">
-        <div className="window w-1/2">
+        <div className="window w-2/3">
           <div className="title-bar">
             <div className="title-bar-text text-base">How To Play</div>
             <div className="title-bar-controls">
@@ -38,20 +38,16 @@ function Home() {
           </div>
           <div className="window-body font-semibold text-base">
             <ul>
+              <li>Player One writes a whacky prompt (secretly)</li>
               <li>
-                Player One writes a secret whacky caption, then passes the
-                device to the next player
+                Player Two draws their interpretation of the caption (secretly)
               </li>
               <li>
-                Player Two secretly draws it, then passes the device to the next
-                player
+                Player Three secretly writes their interpretation of the drawing
+                (secretly)
               </li>
               <li>
-                Player Three secretly captions the image, then passes the device
-                to the next player
-              </li>
-              <li>
-                ... and continues until all the players have made their
+                ... continuing until all the players have made their
                 contribution
               </li>
               <li>Enjoy your collective masterpiece!</li>
@@ -74,7 +70,12 @@ function Home() {
             <option value={12}>12</option>
           </select>
 
-          <button onClick={handleSubmit} type="submit" aria-label="submit">
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            aria-label="submit"
+            className="generalButton"
+          >
             Start
           </button>
         </form>

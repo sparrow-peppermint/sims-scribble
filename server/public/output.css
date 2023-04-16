@@ -558,10 +558,6 @@ video {
   display: flex;
 }
 
-.h-1\/4 {
-  height: 25%;
-}
-
 .h-screen {
   height: 100vh;
 }
@@ -578,8 +574,8 @@ video {
   width: 5rem;
 }
 
-.w-40 {
-  width: 10rem;
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .flex-row {
@@ -602,10 +598,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
-.rounded-lg {
-  border-radius: 0.5rem;
 }
 
 .border {
@@ -691,11 +683,6 @@ video {
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .text-base {
