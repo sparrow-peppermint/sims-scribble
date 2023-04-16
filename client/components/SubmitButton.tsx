@@ -14,7 +14,7 @@ function SubmitButton(props: PropsData) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <button type="submit" aria-label="submit">
+        <button type="submit" aria-label="submit" className="generalButton">
           Submit
         </button>
       </form>
