@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Id } from '../../models/Type'
 
-
-
 function NextPlayer(props: Id) {
   const navigate = useNavigate()
 
@@ -15,7 +13,9 @@ function NextPlayer(props: Id) {
   return (
     <>
       <p>Now pass device to Player {props.id}</p>
-      <button onClick={handleSubmit}>Pass</button>
+      <button onClick={handleSubmit}>
+        Player {props.id}, click this when you are ready!
+      </button>
     </>
   )
 }

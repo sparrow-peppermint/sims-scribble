@@ -16,22 +16,18 @@ describe('Testing the Write component', () => {
   }),
     test('if the input is rendering on the page', () => {
       render(
-        <>
-          <Router>
-            <Write />
-          </Router>
-        </>
+        <Router>
+          <Write />
+        </Router>
       )
       const input = screen.getByRole('textbox')
       expect(input).toBeInTheDocument()
     }),
     test('if input can have text added', () => {
       render(
-        <>
-          <Router>
-            <Write />
-          </Router>
-        </>
+        <Router>
+          <Write />
+        </Router>
       )
       const input = screen.getByPlaceholderText(
         'frog smoking a pipe...'
