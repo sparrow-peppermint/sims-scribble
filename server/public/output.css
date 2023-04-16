@@ -577,10 +577,6 @@ video {
   border-radius: 0.5rem;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .bg-teal {
   --tw-bg-opacity: 1;
   background-color: rgb(0 128 128 / var(--tw-bg-opacity));
@@ -592,6 +588,10 @@ video {
 
 .bg-contain {
   background-size: contain;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .p-4 {
