@@ -26,7 +26,7 @@ describe('Testing the NextPlayer component', () => {
       </>
     )
 
-    const text = screen.getByText('Pass')
+    const text = screen.getByText('Player 2, click this when you are ready!')
 
     expect(text).toBeInTheDocument()
   })
@@ -41,6 +41,8 @@ describe('Testing the NextPlayer component', () => {
 
     const button = screen.getByRole('button')
 
-    expect(button.innerHTML).toMatch(/pass/i)
+    expect(button.innerHTML).toMatch(
+      /player 2, click this when you are ready!/i
+    )
   })
 })
