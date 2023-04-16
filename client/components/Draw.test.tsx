@@ -13,6 +13,4 @@ describe('Testing the Draw component', () => {
     const canvas = screen.getByTestId('canvas')
     expect(canvas).toBeInTheDocument()
   })
-
-
 })

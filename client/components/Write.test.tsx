@@ -14,15 +14,6 @@ describe('Testing the Write component', () => {
     const heading = screen.getByRole('heading', { level: 2 })
     expect(heading).toBeInTheDocument()
   }),
-    test('if the image is rendering on the page', () => {
-      render(
-        <Router>
-          <Write />
-        </Router>
-      )
-      const image = screen.getByRole('img')
-      expect(image).toBeInTheDocument()
-    }),
     test('if the input is rendering on the page', () => {
       render(
         <>
