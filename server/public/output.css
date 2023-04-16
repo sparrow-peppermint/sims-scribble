@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: currentColor;
   /* 2 */
 }
 
@@ -585,14 +585,9 @@ video {
   border-width: 2px;
 }
 
-.bg-cyan-300 {
+.bg-teal {
   --tw-bg-opacity: 1;
-  background-color: rgb(103 232 249 / var(--tw-bg-opacity));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(0 128 128 / var(--tw-bg-opacity));
 }
 
 .bg-paint {
@@ -618,9 +613,4 @@ video {
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }

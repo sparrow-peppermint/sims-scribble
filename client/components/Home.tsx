@@ -21,7 +21,8 @@ function Home() {
 
   return (
     <div className="h-screen">
-      <div className="bg-white container h-1/4 w-1/2 b-10 flex justify-center rounded-lg">
+      {/* <div className="bg-white container h-1/4 w-1/2 b-10 flex justify-center rounded-lg"> */}
+      <div className="bg-white container window">
         <p className="m-30">Draw what you read and caption what you see</p>
       </div>
       <div className="bg-white container h-1/4 w-1/2 b-10 flex justify-center rounded-lg">
