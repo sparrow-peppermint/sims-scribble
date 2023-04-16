@@ -16,4 +16,3 @@ export async function getDataById(id: number) {
 export async function addData(data: Input) {
   await request.post(rootUrl).send(data)
 }
-

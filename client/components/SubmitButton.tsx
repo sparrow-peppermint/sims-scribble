@@ -1,13 +1,17 @@
 import { addData } from '../apis/api'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Data, PropsData } from '../../models/Data'
+import { useAppSelector } from '../hooks'
 
 function SubmitButton(props: PropsData) {
+  const slice = useAppSelector((state) => state.players)
+
   const navigate = useNavigate()
   function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault()
     addData(props.data)
     navigate(`/pass/${props.id + 1}`)
+    console.log(slice)
   }
 
   return (
