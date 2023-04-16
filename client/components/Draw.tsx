@@ -18,7 +18,7 @@ function Draw() {
   return (
     <>
       <p>{state.caption}</p>
-      <Canvas width={700} height={500} id={Number(id)} />
+      <Canvas width={510} height={480} id={Number(id)} />
     </>
   )
 }

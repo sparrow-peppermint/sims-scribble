@@ -9,6 +9,14 @@ module.exports = {
     container: {
       center: true,
     },
+    colors: {
+      teal: '#008080',
+    },
+    extend: {
+      backgroundImage: {
+        paint: "url('/images/paint.jpg')",
+      },
+    },
   },
   plugins: [],
 }

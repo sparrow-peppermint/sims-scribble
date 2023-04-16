@@ -49,6 +49,7 @@ function Canvas({ width, height, id }: Props) {
   return (
     <>
       <canvas
+        className="bg-paint bg-contain"
         data-testid="canvas"
         id="canvas"
         width={width}

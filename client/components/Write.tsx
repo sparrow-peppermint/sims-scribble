@@ -13,7 +13,7 @@ function Write() {
     getDataById(Number(id) - 1)
       .then((res) => setImage(res))
       .catch((err) => console.error(err.message))
-  })
+  }, [])
 
   function handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     const value = evt.target.value
