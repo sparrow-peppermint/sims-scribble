@@ -5,12 +5,18 @@ module.exports = {
   theme: {
     fontFamily: {
       header: ['Cloudstorm', 'sans-serif'],
+      windows: ['FranklinGothic', 'sans-serif'],
+      windowsCondensed: ['FGCondensed', 'sans-serif'],
+      windowsItalic: ['FGItalic', 'sans-serif'],
     },
     container: {
       center: true,
     },
     colors: {
       teal: '#008080',
+    },
+    corePlugins: {
+      preflight: false,
     },
     extend: {
       backgroundImage: {
