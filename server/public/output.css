@@ -549,17 +549,9 @@ video {
   }
 }
 
-.m-10 {
-  margin: 2.5rem;
-}
-
 .mx-48 {
   margin-left: 12rem;
   margin-right: 12rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
 }
 
 .ml-20 {
@@ -568,10 +560,6 @@ video {
 
 .flex {
   display: flex;
-}
-
-.h-auto {
-  height: auto;
 }
 
 .h-screen {
@@ -626,16 +614,8 @@ video {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
-.space-y-10 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
-}
-
-.space-x-10 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+.text-clip {
+  text-overflow: clip;
 }
 
 .border {
@@ -659,6 +639,10 @@ video {
   background-size: cover;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -667,8 +651,12 @@ video {
   padding: 1.25rem;
 }
 
-.p-10 {
-  padding: 2.5rem;
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .pb-4 {
@@ -683,10 +671,6 @@ video {
   padding-right: 0.75rem;
 }
 
-.ps-10 {
-  padding-inline-start: 2.5rem;
-}
-
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -699,16 +683,24 @@ video {
   padding-top: 2.5rem;
 }
 
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
 .text-end {
   text-align: end;
 }
 
 .align-bottom {
   vertical-align: bottom;
-}
-
-.font-\[\'Arial\'\] {
-  font-family: 'Arial';
 }
 
 .font-windows {

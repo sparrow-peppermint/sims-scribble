@@ -25,9 +25,9 @@ function Start() {
                   <button aria-label="Close"></button>
                 </div>
               </div>
-              <div className="window-body font-semibold text-base">
+              <div className="window-body font-semibold text-base p-2">
                 <p> Write a wacky prompt for Player 2 to draw</p>
-                <div className="flex flex-row justify-center p-10">
+                <div className="flex flex-row justify-center p-8">
                   <div>
                     <form>
                       <label>

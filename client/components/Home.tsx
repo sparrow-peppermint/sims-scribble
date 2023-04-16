@@ -56,37 +56,40 @@ function Home() {
               </li>
               <li>Enjoy your collective masterpiece!</li>
             </ul>
+            <div className="container flex justify-center pt-5">
+              <form>
+                <h5>Enter the number of players</h5>
+                <div className="flex justify-center p-5 gap-x-10">
+                  <select
+                    onChange={handleChange}
+                    className="scale-150 text-end"
+                  >
+                    <option value={4}>4</option>
+                    <option value={5}>5</option>
+                    <option value={6}>6</option>
+                    <option value={7}>7</option>
+                    <option value={8}>8</option>
+                    <option value={9}>9</option>
+                    <option value={10}>10</option>
+                    <option value={11}>11</option>
+                    <option value={12}>12</option>
+                  </select>
+
+                  <button
+                    onClick={handleSubmit}
+                    type="submit"
+                    aria-label="submit"
+                    className="generalButton"
+                  >
+                    Start
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
       <br />
-      <div className="container flex justify-center pt-10">
-        <form>
-          <h3>Enter the number of players</h3>
-          <div className="flex justify-center p-5 gap-x-10">
-            <select onChange={handleChange} className="scale-150">
-              <option value={4}>4</option>
-              <option value={5}>5</option>
-              <option value={6}>6</option>
-              <option value={7}>7</option>
-              <option value={8}>8</option>
-              <option value={9}>9</option>
-              <option value={10}>10</option>
-              <option value={11}>11</option>
-              <option value={12}>12</option>
-            </select>
-
-            <button
-              onClick={handleSubmit}
-              type="submit"
-              aria-label="submit"
-              className="generalButton"
-            >
-              Start
-            </button>
-          </div>
-        </form>
-      </div>
     </div>
   )
 }
