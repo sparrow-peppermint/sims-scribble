@@ -6,18 +6,25 @@ import Home from './Home'
 import Start from './Start'
 import Pass from './Pass'
 import Write from './Write'
+import { Link } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="h-screen bg-teal ">
+    <div className="min-h-screen bg-cover bg-teal">
       <Header />
+
+      <div className="containter border-4 flex flex-col mx-48">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/start" element={<Start />} />
+          <Route path="/pass/:id" element={<Pass />} />
+
+          <Route path="/write/:id" element={<Write />} />
+          <Route path="/display" element={<Display />} />
+        </Routes>
+      </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/start" element={<Start />} />
-        <Route path="/pass/:id" element={<Pass />} />
         <Route path="/draw/:id" element={<Draw />} />
-        <Route path="/write/:id" element={<Write />} />
-        <Route path="/display" element={<Display />} />
       </Routes>
     </div>
   )
