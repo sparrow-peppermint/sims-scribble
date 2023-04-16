@@ -22,7 +22,13 @@ function Write() {
 
   return (
     <>
-      {image.file && <img src={image.file} alt="previous players drawing" />}
+      {image.file && (
+        <img
+          aria-label="image from previous player"
+          src={image.file}
+          alt="previous players drawing"
+        />
+      )}
       <h2>Add a caption for this drawing</h2>
       <input
         onChange={handleChange}

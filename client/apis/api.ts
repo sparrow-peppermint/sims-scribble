@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { Input, Data } from '../../models/Data'
 
-const rootUrl = 'http://localhost:3000/api/v1/game'
+const rootUrl = '/api/v1/game'
 
 export async function getData() {
   const response = await request.get(rootUrl)
@@ -16,4 +16,3 @@ export async function getDataById(id: number) {
 export async function addData(data: Input) {
   await request.post(rootUrl).send(data)
 }
-

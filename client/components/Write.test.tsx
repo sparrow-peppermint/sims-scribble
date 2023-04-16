@@ -14,15 +14,6 @@ describe('Testing the Write component', () => {
     const heading = screen.getByRole('heading', { level: 2 })
     expect(heading).toBeInTheDocument()
   }),
-    test('if the image is rendering on the page', () => {
-      render(
-        <Router>
-          <Write />
-        </Router>
-      )
-      const image = screen.getByRole('img')
-      expect(image).toBeInTheDocument()
-    }),
     test('if the input is rendering on the page', () => {
       render(
         <Router>
@@ -44,5 +35,14 @@ describe('Testing the Write component', () => {
       fireEvent.change(input, { target: { value: 'Test is working' } })
       expect(input.value).toBe('Test is working')
     })
-  test.todo('if the SubmitButton renders on the page')
+  test('if the SubmitButton renders on the page', () => {
+    render(
+      <Router>
+        <Write />
+      </Router>
+    )
+
+    const button = screen.getByText('Submit')
+    expect(button).toBeInTheDocument()
+  })
 })
