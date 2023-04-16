@@ -22,9 +22,11 @@ describe('Testing the Start component', () => {
 
   test('if user input updates state', () => {
     render(
-      <Router>
-        <Start />
-      </Router>
+      <>
+        <Router>
+          <Start />
+        </Router>
+      </>
     )
     const input = screen.getByRole('textbox') as HTMLInputElement
     fireEvent.change(input, { target: { value: 'Testing testing 123' } })
@@ -33,9 +35,11 @@ describe('Testing the Start component', () => {
 
   test('If placeholder is displaying', () => {
     render(
-      <Router>
-        <Start />
-      </Router>
+      <>
+        <Router>
+          <Start />
+        </Router>
+      </>
     )
     const input = screen.getByPlaceholderText(
       'Enter prompt for user to draw'

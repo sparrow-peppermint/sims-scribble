@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { useNavigate } from 'react-router-dom'
+import { players } from '../slices/game'
 
 function Home() {
   const slice = useAppSelector((state) => state.players)
   console.log(slice)
   const [input, setInput] = useState(slice)
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
 
   function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const noOfPlayers = Number(event.target.value)
@@ -15,10 +17,10 @@ function Home() {
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault()
-    // dispatch()
-    // send number to db
     setInput(input)
+    dispatch(players(input))
     console.log(input)
+
     navigate('/start')
   }
 
