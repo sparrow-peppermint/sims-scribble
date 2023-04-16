@@ -17,7 +17,7 @@ function Start() {
             <div className="window w-2/3">
               <div className="title-bar">
                 <div className="title-bar-text text-base">
-                  Enter prompt for Player 2
+                  Your Wacky Prompt
                 </div>
                 <div className="title-bar-controls">
                   <button aria-label="Minimize"></button>
@@ -25,33 +25,30 @@ function Start() {
                   <button aria-label="Close"></button>
                 </div>
               </div>
-              <div className="window-body font-semibold text-base">
-                <p>
-                  Heres where you enter a description as to what you want P2 to
-                  draw
-                </p>
+              <div className="window-body font-semibold text-base p-2">
+                <p> Write a wacky prompt for Player 2 to draw</p>
+                <div className="flex flex-row justify-center p-8">
+                  <div>
+                    <form>
+                      <label>
+                        <input
+                          type="text"
+                          className="textInput"
+                          onChange={handleChange}
+                          placeholder="Enter prompt"
+                          value={input}
+                        />
+                      </label>
+                    </form>
+                  </div>
+                  <div className="ml-20">
+                    <SubmitButton
+                      data={{ name: null, file: null, caption: input }}
+                      id={1}
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="container flex justify-center field-row">
-            <form>
-              <label>
-                <h4 className="font-['Arial'] p-4 font-semibold">
-                  What to draw:
-                </h4>
-                <input
-                  type="text"
-                  onChange={handleChange}
-                  placeholder="Enter prompt for user to draw"
-                  value={input}
-                />
-              </label>
-            </form>
-            <div className="flex items-center h-auto ps-10 ">
-              <SubmitButton
-                data={{ name: null, file: null, caption: input }}
-                id={1}
-              />
             </div>
           </div>
         </div>
