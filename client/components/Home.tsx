@@ -26,8 +26,8 @@ function Home() {
 
   return (
     <div className="h-screen">
-      <div className="container flex justify-center">
-        <div className="window w-1/2">
+      <div className="container flex justify-center pt-10">
+        <div className="window w-2/3">
           <div className="title-bar">
             <div className="title-bar-text text-base">How To Play</div>
             <div className="title-bar-controls">
@@ -59,24 +59,32 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="container flex justify-center">
+      <br />
+      <div className="container flex justify-center pt-10">
         <form>
           <h3>Enter the number of players</h3>
-          <select onChange={handleChange}>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-            <option value={6}>6</option>
-            <option value={7}>7</option>
-            <option value={8}>8</option>
-            <option value={9}>9</option>
-            <option value={10}>10</option>
-            <option value={11}>11</option>
-            <option value={12}>12</option>
-          </select>
+          <div className="flex justify-center p-5 gap-x-10">
+            <select onChange={handleChange} className="scale-150">
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+              <option value={6}>6</option>
+              <option value={7}>7</option>
+              <option value={8}>8</option>
+              <option value={9}>9</option>
+              <option value={10}>10</option>
+              <option value={11}>11</option>
+              <option value={12}>12</option>
+            </select>
 
-          <button onClick={handleSubmit} type="submit" aria-label="submit">
-            Start
-          </button>
+            <button
+              onClick={handleSubmit}
+              type="submit"
+              aria-label="submit"
+              className="generalButton"
+            >
+              Start
+            </button>
+          </div>
         </form>
       </div>
     </div>
