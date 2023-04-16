@@ -7,7 +7,7 @@ test('Canvas renders a canvas element', () => {
   render(
     <>
       <Router>
-        <Canvas width={700} height={500} id={1} />
+        <Canvas id={1} />
       </Router>
     </>
   )
