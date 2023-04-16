@@ -2,5 +2,12 @@
   font-size: large;
   background-color: #b5b5b5;
 
+}
 
+.textInput {
+
+  font-size:medium;
+  width: 32rem;
+  height: 50px;
+  transform: scale(1.2);
 }

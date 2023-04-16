@@ -549,21 +549,33 @@ video {
   }
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .mx-48 {
   margin-left: 12rem;
   margin-right: 12rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-20 {
+  margin-left: 5rem;
 }
 
 .flex {
   display: flex;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-auto {
   height: auto;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .min-h-screen {
@@ -614,6 +626,18 @@ video {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.space-y-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.space-x-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .border {
   border-width: 1px;
 }
@@ -643,6 +667,10 @@ video {
   padding: 1.25rem;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -653,6 +681,10 @@ video {
 
 .pr-3 {
   padding-right: 0.75rem;
+}
+
+.ps-10 {
+  padding-inline-start: 2.5rem;
 }
 
 .pt-1 {
@@ -667,10 +699,6 @@ video {
   padding-top: 2.5rem;
 }
 
-.ps-10 {
-  padding-inline-start: 2.5rem;
-}
-
 .text-end {
   text-align: end;
 }
@@ -679,12 +707,12 @@ video {
   vertical-align: bottom;
 }
 
-.font-windows {
-  font-family: FranklinGothic, sans-serif;
-}
-
 .font-\[\'Arial\'\] {
   font-family: 'Arial';
+}
+
+.font-windows {
+  font-family: FranklinGothic, sans-serif;
 }
 
 .text-3xl {
