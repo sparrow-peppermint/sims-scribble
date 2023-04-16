@@ -3,15 +3,10 @@ import Canvas from './Canvas'
 
 import { getDataById } from '../apis/api'
 import { useEffect, useState } from 'react'
-
-interface Data {
-  name: string
-  file: null
-  caption: string
-}
+import { Input } from '../../models/Data'
 
 function Draw() {
-  const [state, setState] = useState({} as Data)
+  const [state, setState] = useState({} as Input)
   const { id } = useParams()
 
   useEffect(() => {
