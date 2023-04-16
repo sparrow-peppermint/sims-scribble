@@ -10,8 +10,8 @@ const gameSlice = createSlice({
   name: 'startSlice',
   initialState: initialState,
   reducers: {
-    players: (state, { payload }: PayloadAction<number>) => {
-      state = payload
+    players: (_, { payload }: PayloadAction<number>) => {
+      return payload
     },
   },
 })

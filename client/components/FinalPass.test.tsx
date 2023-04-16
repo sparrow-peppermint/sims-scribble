@@ -6,9 +6,11 @@ import { BrowserRouter } from 'react-router-dom'
 
 test('Paragraph renders and has the correct text', () => {
   render(
-    <BrowserRouter>
-      <FinalPass />
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <FinalPass />
+      </BrowserRouter>
+    </>
   )
 
   expect(screen.getByText('This is the end of the game')).toBeInTheDocument()
@@ -16,9 +18,11 @@ test('Paragraph renders and has the correct text', () => {
 
 test('Button renders and has the correct text', () => {
   render(
-    <BrowserRouter>
-      <FinalPass />
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <FinalPass />
+      </BrowserRouter>
+    </>
   )
 
   const button = screen.getByRole('button')
