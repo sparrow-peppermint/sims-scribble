@@ -17,21 +17,29 @@ describe('Testing the Start component', () => {
     )
     // ASSERT
     expect(text).toBeInTheDocument()
-  })
-  test.todo('After the submit button is being clicked, page redirects')
-
-  test('if user input updates state', () => {
-    render(
-      <>
+  }),
+    test('if the SubmitButton renders on the page', () => {
+      render(
         <Router>
           <Start />
         </Router>
-      </>
-    )
-    const input = screen.getByRole('textbox') as HTMLInputElement
-    fireEvent.change(input, { target: { value: 'Testing testing 123' } })
-    expect(input.value).toBe('Testing testing 123')
-  })
+      )
+
+      const button = screen.getByText('Submit')
+      expect(button).toBeInTheDocument()
+    }),
+    test('if user input updates state', () => {
+      render(
+        <>
+          <Router>
+            <Start />
+          </Router>
+        </>
+      )
+      const input = screen.getByRole('textbox') as HTMLInputElement
+      fireEvent.change(input, { target: { value: 'Testing testing 123' } })
+      expect(input.value).toBe('Testing testing 123')
+    })
 
   test('If placeholder is displaying', () => {
     render(
