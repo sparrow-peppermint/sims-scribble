@@ -578,6 +578,10 @@ video {
   width: 5rem;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -689,8 +693,22 @@ video {
   line-height: 1;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .font-extrabold {
   font-weight: 800;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .tracking-tighter {

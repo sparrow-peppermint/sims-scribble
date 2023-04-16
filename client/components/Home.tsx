@@ -29,14 +29,14 @@ function Home() {
       <div className="container flex justify-center">
         <div className="window w-1/2">
           <div className="title-bar">
-            <div className="title-bar-text">How To Play</div>
+            <div className="title-bar-text text-base">How To Play</div>
             <div className="title-bar-controls">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>
               <button aria-label="Close"></button>
             </div>
           </div>
-          <div className="window-body">
+          <div className="window-body font-semibold text-base">
             <ul>
               <li>
                 Player One writes a secret whacky caption, then passes the
@@ -59,9 +59,9 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-white container h-1/4 w-1/2 b-10 flex justify-center rounded-lg">
+      <div className="container flex justify-center">
         <form>
-          <p>Enter the number of players</p>
+          <h3>Enter the number of players</h3>
           <select onChange={handleChange}>
             <option value={4}>4</option>
             <option value={5}>5</option>
