@@ -51,3 +51,17 @@ it('Post / should reply with a status of 201', async () => {
 
   expect(response.status).toBe(201)
 })
+
+it('Patch / should reply with a status of 201', async () => {
+  const data = {
+    name: null,
+    file: null,
+    caption: 'Update Test',
+  }
+
+  jest.mocked(db.updateData(3, data))
+  const response = await request(server).patch('/api/v1/game/3').send({ data })
+
+  expect(response.status).toBe(201)
+  expect(response.body).toMatchObject({})
+})

@@ -32,4 +32,15 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.patch('/:id', async (req, res) => {
+  const id = +req.params.id
+  const input = req.body
+  try {
+    await db.updateData(id, input)
+    res.status(201).send('Okay')
+  } catch (error) {
+    if (error instanceof Error) res.status(500).send('DataBase Error')
+  }
+})
+
 export default router

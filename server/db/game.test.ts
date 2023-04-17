@@ -54,3 +54,22 @@ test('Db function can add to the db return a new selected object of images and t
     caption: 'testing AddData',
   })
 })
+
+test('Db function can update to the db and returns a new selected object of images and text', async () => {
+  const obj = {
+    name: null,
+    file: null,
+    caption: 'Testing update DB func',
+  }
+  await db.updateData(3, obj, testdb)
+
+  const data = await db.getData(testdb)
+
+  expect(data).toHaveLength(4)
+  expect(data[2]).toMatchObject({
+    id: 3,
+    name: null,
+    file: null,
+    caption: 'Testing update DB func',
+  })
+})
