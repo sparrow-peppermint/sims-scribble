@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getData } from '../../client/apis/api'
-import { useAppDispatch } from '../hooks'
+import { useAppDispatch, useAppSelector } from '../hooks'
 
 function Display() {
   const [data, setData] = useState([])
@@ -10,9 +10,21 @@ function Display() {
       .catch((err) => err.message)
   }, [])
 
+  // const noOfPlayers = useAppSelector((state) => state.players)
+  // console.log(noOfPlayers)
+
+  // const nextCaption = data.forEach((turn) => {
+  //   if (turn.caption != null) {
+  //     console.log(turn.caption)
+  //   }
+  // })
+
   return (
     <div className="mb-10">
-      {data.map(({ id, name, file, caption }) => {
+      {data.map((turn) => {
+        const { id, name, file, caption } = turn
+        // data[turn[id +1].caption]
+
         if (id % 2 == 0) {
           return (
             <>
@@ -21,7 +33,9 @@ function Display() {
                   <img key={id} src={file} alt="players drawing" />
                 </div>
                 <div className="m-8">
-                  <ul className="tree-view">caption</ul>
+                  <ul key={id} className="tree-view">
+                    caption
+                  </ul>
                 </div>
               </div>
             </>
