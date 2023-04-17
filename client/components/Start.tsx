@@ -27,21 +27,20 @@ function Start() {
               </div>
               <div className="window-body font-semibold text-base p-2">
                 <p> Write a wacky prompt for Player 2 to draw</p>
-                <div className="flex flex-row justify-center p-8">
-                  <div>
-                    <form>
-                      <label>
-                        <input
-                          type="text"
-                          className="textInput"
-                          onChange={handleChange}
-                          placeholder="Enter prompt"
-                          value={input}
-                        />
-                      </label>
-                    </form>
-                  </div>
-                  <div className="ml-20">
+                <div className="flex justify-center py-8">
+                  <form>
+                    <label>
+                      <input
+                        type="text"
+                        className="textInput"
+                        onChange={handleChange}
+                        placeholder="Enter prompt"
+                        value={input}
+                      />
+                    </label>
+                  </form>
+
+                  <div className="ml-10">
                     <SubmitButton
                       data={{ name: null, file: null, caption: input }}
                       id={1}
