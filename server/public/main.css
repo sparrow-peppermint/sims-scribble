@@ -2,3 +2,8 @@
   font-size: large;
   background-color: #b5b5b5;
 }
+
+.window .display-img {
+  margin-bottom: 10%;
+  align-items: center;
+}
