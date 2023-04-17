@@ -18,7 +18,7 @@ function Header() {
             Sims
           </p>
           <h1 className="font-windows font-extrabold tracking-tighter text-5xl">
-            Scribble{' '}
+            Scribble
           </h1>
           <p className="font-windows tracking-tighter text-6xl">98</p>
         </div>

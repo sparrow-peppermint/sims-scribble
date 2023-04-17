@@ -72,9 +72,9 @@ function Canvas({ id }: Id) {
   }
 
   return (
-    <div>
+    <div className="container text-center">
+      <img src="/images/paint.jpg" alt="paintImg" />
       <canvas
-        className="bg-no-repeat bg-paint bg-contain"
         data-testid="canvas"
         id="canvas"
         ref={canvasRef}
