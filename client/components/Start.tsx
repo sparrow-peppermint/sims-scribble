@@ -27,12 +27,12 @@ function Start() {
               </div>
               <div className="window-body font-semibold text-base p-2">
                 <p> Write a wacky prompt for Player 2 to draw</p>
-                <div className="flex flex-row justify-center py-8">
+                <div className="flex justify-center py-8">
                   <form>
                     <label>
                       <input
                         type="text"
-                        className="textInput w-full"
+                        className="textInput"
                         onChange={handleChange}
                         placeholder="Enter prompt"
                         value={input}

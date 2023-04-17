@@ -26,9 +26,7 @@ function Home() {
 
   return (
     <div className="h-screen">
-
       <div className="container flex justify-center pt-10">
-
         <div className="window w-2/3">
           <div className="title-bar">
             <div className="title-bar-text text-base">How To Play</div>
@@ -38,15 +36,14 @@ function Home() {
               <button aria-label="Close"></button>
             </div>
           </div>
-          <div className="window-body font-semibold text-base">
+          <div className="window-body font-semibold text-base pl-5 pt-5">
             <ul>
               <li>Player One writes a whacky prompt (secretly)</li>
               <li>
                 Player Two draws their interpretation of the caption (secretly)
               </li>
               <li>
-                Player Three secretly writes their interpretation of the drawing
-                (secretly)
+                Player Three writes a caption to describe the drawing (secretly)
               </li>
               <li>
                 ... continuing until all the players have made their
