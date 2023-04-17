@@ -6,7 +6,8 @@
 .textInput {
 
   font-size:medium;
-  width: 32rem;
+  min-width: 400px;
+
   height: 50px;
   transform: scale(1.2);
 }
