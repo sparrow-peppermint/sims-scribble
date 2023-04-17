@@ -21,14 +21,17 @@ function Write() {
   }
 
   return (
-    <>
-      {image.file && (
-        <img
-          aria-label="image from previous player"
-          src={image.file}
-          alt="previous players drawing"
-        />
-      )}
+    <div>
+      <div className="place-content-center">
+        {image.file && (
+          <img
+            className="bg-no-repeat bg-paint bg-contain "
+            aria-label="image from previous player"
+            src={image.file}
+            alt="previous players drawing"
+          />
+        )}
+      </div>
       <h2>Add a caption for this drawing</h2>
       <input
         onChange={handleChange}
@@ -40,7 +43,7 @@ function Write() {
         data={{ name: null, file: null, caption: input }}
         id={Number(id)}
       />
-    </>
+    </div>
   )
 }
 

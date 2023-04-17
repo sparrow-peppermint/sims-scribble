@@ -30,6 +30,7 @@ function Canvas({ id }: Id) {
     if (e.buttons !== 1) return
     const ctx = canvasCTX as any
     const position = computePointInCavas(e.clientX, e.clientY)
+    console.log(position)
     if (position) setMouseData(position)
     if (ctx && position) {
       ctx.beginPath()
