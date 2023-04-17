@@ -549,10 +549,18 @@ video {
   }
 }
 
+.m-8 {
+  margin: 2rem;
+}
+
 .mx-48 {
   margin-left: 12rem;
   margin-right: 12rem;
 }
+
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 
 .ml-10 {
   margin-left: 2.5rem;
@@ -560,11 +568,22 @@ video {
 
 .flex {
   display: flex;
+
+}
+
+.flex {
+  display: flex;
+}
+
+
+.h-auto {
+  height: auto;
 }
 
 .h-screen {
   height: 100vh;
 }
+
 
 .min-h-screen {
   min-height: 100vh;
@@ -582,6 +601,7 @@ video {
   width: 5rem;
 }
 
+
 .w-full {
   width: 100%;
 }
@@ -597,6 +617,7 @@ video {
 .w-5\/6 {
   width: 83.333333%;
 }
+
 
 .scale-150 {
   --tw-scale-x: 1.5;
@@ -688,6 +709,10 @@ video {
   padding-right: 0.75rem;
 }
 
+.ps-10 {
+  padding-inline-start: 2.5rem;
+}
+
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -699,6 +724,7 @@ video {
 .pt-10 {
   padding-top: 2.5rem;
 }
+
 
 .pt-5 {
   padding-top: 1.25rem;
@@ -712,6 +738,7 @@ video {
   text-align: center;
 }
 
+
 .text-end {
   text-align: end;
 }
@@ -719,6 +746,12 @@ video {
 .align-bottom {
   vertical-align: bottom;
 }
+
+
+.font-\[\'Arial\'\] {
+  font-family: 'Arial';
+}
+
 
 .font-windows {
   font-family: FranklinGothic, sans-serif;
