@@ -554,8 +554,8 @@ video {
   margin-right: 12rem;
 }
 
-.ml-20 {
-  margin-left: 5rem;
+.ml-10 {
+  margin-left: 2.5rem;
 }
 
 .flex {
@@ -582,6 +582,9 @@ video {
   width: 5rem;
 }
 
+.w-full {
+  width: 100%;
+}
 
 .scale-150 {
   --tw-scale-x: 1.5;
@@ -643,8 +646,8 @@ video {
   background-size: cover;
 }
 
-.p-10 {
-  padding: 2.5rem;
+.p-2 {
+  padding: 0.5rem;
 }
 
 .p-4 {
@@ -655,12 +658,9 @@ video {
   padding: 1.25rem;
 }
 
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-8 {
-  padding: 2rem;
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-4 {
@@ -689,14 +689,6 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-justify {
-  text-align: justify;
 }
 
 .text-end {
