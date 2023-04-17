@@ -42,7 +42,9 @@ function Draw() {
             </div>
           </div>
         </div>
-        <Canvas width={510} height={480} id={Number(id)} />
+      </div>
+      <div className="bg-blue-500">
+        <Canvas id={Number(id)} />
       </div>
     </>
   )

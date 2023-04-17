@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react'
-import { getData } from '../../client/apis/api'
 import { useAppDispatch, useAppSelector } from '../hooks'
+import { getData, resetPlayers } from '../../client/apis/api'
+import { useNavigate } from 'react-router-dom'
+
 
 function Display() {
   const [data, setData] = useState([])
+  const navigate = useNavigate()
   useEffect(() => {
     getData()
       .then((res) => setData(res))
       .catch((err) => err.message)
   }, [])
+
 
   // const noOfPlayers = useAppSelector((state) => state.players)
   // console.log(noOfPlayers)
@@ -60,6 +64,26 @@ function Display() {
         }
       })}
     </div>
+
+  async function handleReset() {
+    await resetPlayers()
+    navigate('/start')
+  }
+
+  return (
+    <>
+      <div>
+        {data.map(({ id, name, file, caption }) => {
+          if (id % 2 == 0) {
+            return <img key={id} src={file} alt="" />
+          } else {
+            return <p key={id}>{caption}</p>
+          }
+        })}
+      </div>
+      <button onClick={handleReset}>Play Again?</button>
+    </>
+
   )
 }
 

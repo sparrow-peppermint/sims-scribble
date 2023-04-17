@@ -54,3 +54,32 @@ test('Db function can add to the db return a new selected object of images and t
     caption: 'testing AddData',
   })
 })
+
+test('Db function can reset the data', async () => {
+  await db.resetData(testdb)
+
+  const data = await db.getData(testdb)
+
+  expect(data).toHaveLength(0)
+})
+
+test('Db function can reset the data and the id is reset', async () => {
+  await db.resetData(testdb)
+
+  const obj = {
+    name: null,
+    file: null,
+    caption: 'reset data',
+  }
+  await db.addData(obj, testdb)
+
+  const data = await db.getData(testdb)
+
+  expect(data).toHaveLength(1)
+  expect(data[0]).toMatchObject({
+    id: 1,
+    name: null,
+    file: null,
+    caption: 'reset data',
+  })
+})

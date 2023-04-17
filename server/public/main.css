@@ -3,3 +3,12 @@
   background-color: #b5b5b5;
 }
 
+
+.textInput {
+
+  font-size:medium;
+  width: 100%;
+
+  transform: scale(1.2);
+}
+
