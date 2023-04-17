@@ -26,6 +26,7 @@ function Home() {
 
   return (
     <div className="h-screen">
+
       <div className="container flex justify-center pt-8">
         <div className="window w-8/10">
           <div className="title-bar">
@@ -36,7 +37,7 @@ function Home() {
               <button aria-label="Close"></button>
             </div>
           </div>
-          <div className="window-body font-semibold text-base">
+          <div className="window-body font-semibold text-base pl-5 pt-5">
             <ul>
               <li className="text-xl">
                 Player One writes a whacky prompt (secretly)
