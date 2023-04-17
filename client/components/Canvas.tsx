@@ -72,49 +72,52 @@ function Canvas({ id }: Id) {
   }
 
   return (
-    <div className="container text-center">
-      <img src="/images/paint.jpg" alt="paintImg" />
-      <canvas
-        data-testid="canvas"
-        id="canvas"
-        ref={canvasRef}
-        onMouseEnter={(e) => SetPos(e)}
-        onMouseDown={(e) => SetPos(e)}
-        onMouseMove={(e) => Draw(e)}
-        onMouseUp={handleMouseUp}
-      ></canvas>
-
-      <div className="controlpanel" style={{}}>
-        <input type="range" value={size} max={40} onChange={handleSize} />
-        <input
-          type="color"
-          value={color}
-          onChange={(e) => {
-            setColor(e.target.value)
-          }}
-        />
-        <button
-          onClick={() => {
-            const ctx: any = canvasCTX
-            if (ctx && canvasRef.current) {
-              ctx.clearRect(
-                0,
-                0,
-                canvasRef.current.width,
-                canvasRef.current.height
-              )
-            }
-          }}
-        >
-          Clear
-        </button>
+    <>
+      <div className="container">
+        <div className="item item-1" style={{}}>
+          <input type="range" value={size} max={40} onChange={handleSize} />
+          <input
+            type="color"
+            value={color}
+            onChange={(e) => {
+              setColor(e.target.value)
+            }}
+          />
+          <button
+            onClick={() => {
+              const ctx: any = canvasCTX
+              if (ctx && canvasRef.current) {
+                ctx.clearRect(
+                  0,
+                  0,
+                  canvasRef.current.width,
+                  canvasRef.current.height
+                )
+              }
+            }}
+          >
+            Clear
+          </button>
+        </div>
+        <div className="item item-2 flex justify-center relative">
+          <img src="/images/paint.jpg" alt="paintImg" className=" w-9/12 " />
+          <canvas
+            className="absolute left-80 top-28 w-7/12 h-4/6"
+            data-testid="canvas"
+            id="canvas"
+            ref={canvasRef}
+            onMouseEnter={(e) => SetPos(e)}
+            onMouseDown={(e) => SetPos(e)}
+            onMouseMove={(e) => Draw(e)}
+            onMouseUp={handleMouseUp}
+          ></canvas>
+        </div>
       </div>
-
       <SubmitButton
         data={{ name: null, file: drawing, caption: null }}
         id={id}
       />
-    </div>
+    </>
   )
 }
 
