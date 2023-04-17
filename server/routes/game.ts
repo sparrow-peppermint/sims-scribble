@@ -32,4 +32,13 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.delete('/', async (req, res) => {
+  try {
+    await db.resetData()
+    res.sendStatus(200)
+  } catch (error) {
+    if (error instanceof Error) res.status(500).send('DataBase Error')
+  }
+})
+
 export default router

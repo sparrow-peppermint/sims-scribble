@@ -17,3 +17,9 @@ export function getDataById(id: number, db = connection) {
 export function addData(data: Data, db = connection) {
   return db('data').insert(data)
 }
+
+export async function resetData(db = connection) {
+  await db('data').del()
+
+  await db('sqlite_sequence').where('name', 'data').update({ seq: 0 })
+}
