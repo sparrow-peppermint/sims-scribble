@@ -21,6 +21,7 @@ function Write() {
   }
 
   return (
+
     <div className="h-screen">
       <div className="container flex justify-center pt-10">
         <div className="window w-2/3">

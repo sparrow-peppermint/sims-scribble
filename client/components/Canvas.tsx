@@ -30,6 +30,7 @@ function Canvas({ id }: Id) {
     if (e.buttons !== 1) return
     const ctx = canvasCTX as any
     const position = computePointInCavas(e.clientX, e.clientY)
+    console.log(position)
     if (position) setMouseData(position)
     if (ctx && position) {
       ctx.beginPath()
@@ -71,9 +72,9 @@ function Canvas({ id }: Id) {
   }
 
   return (
-    <div>
+    <div className="container text-center">
+      <img src="/images/paint.jpg" alt="paintImg" />
       <canvas
-        className="bg-no-repeat bg-paint bg-contain"
         data-testid="canvas"
         id="canvas"
         ref={canvasRef}
