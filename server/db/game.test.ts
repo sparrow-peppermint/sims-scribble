@@ -55,7 +55,6 @@ test('Db function can add to the db return a new selected object of images and t
   })
 })
 
-
 test('Db function can update to the db and returns a new selected object of images and text', async () => {
   const obj = {
     name: null,
@@ -72,6 +71,8 @@ test('Db function can update to the db and returns a new selected object of imag
     name: null,
     file: null,
     caption: 'Testing update DB func',
+  })
+})
 
 test('Db function can reset the data', async () => {
   await db.resetData(testdb)
@@ -99,6 +100,15 @@ test('Db function can reset the data and the id is reset', async () => {
     name: null,
     file: null,
     caption: 'reset data',
-
   })
+})
+
+test('Db func soft reset can reset the data but the ids are intact', async () => {
+  await db.softReset(testdb)
+
+  const data = await db.getData(testdb)
+
+  expect(data).toHaveLength(4)
+  expect(data[0].id).toBe(1)
+  expect(data[3].id).toBe(4)
 })

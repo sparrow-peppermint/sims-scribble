@@ -18,7 +18,7 @@ function Display() {
 
   async function handleSoftReset() {
     await softResetPlayers()
-    navigate('/')
+    navigate('/start')
   }
 
   return (
