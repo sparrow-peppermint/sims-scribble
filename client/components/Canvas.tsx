@@ -10,6 +10,19 @@ function Canvas({ id }: Id) {
   const [size, setSize] = useState(10)
   const [drawing, setDrawing] = useState('')
 
+  const colors = [
+    { color: 'black', hash: '#000000' },
+    { color: 'darkgrey', hash: '#5c5c5c' },
+    { color: 'red', hash: '#ff0000' },
+    { color: 'blue', hash: '#0000ff' },
+    { color: 'green', hash: '#00ff00' },
+    { color: 'orange', hash: '#ff9238' },
+    { color: 'purple', hash: '#ae00ff' },
+    { color: 'pink', hash: '#ff24f8' },
+    { color: 'skyblue', hash: '#00aaff' },
+    { color: 'darkgreen', hash: '#096902' },
+  ]
+
   useEffect(() => {
     const canvas = canvasRef.current as HTMLCanvasElement | null
     if (canvas) {
@@ -21,7 +34,7 @@ function Canvas({ id }: Id) {
   }, [canvasRef])
 
   const SetPos = (e: any) => {
-    const position = computePointInCavas(e.clientX, e.clientY)
+    const position = computePointInCanvas(e.clientX, e.clientY)
     if (position) setMouseData(position)
   }
 
@@ -29,8 +42,7 @@ function Canvas({ id }: Id) {
     SetPos(e)
     if (e.buttons !== 1) return
     const ctx = canvasCTX as any
-    const position = computePointInCavas(e.clientX, e.clientY)
-    console.log(position)
+    const position = computePointInCanvas(e.clientX, e.clientY)
     if (position) setMouseData(position)
     if (ctx && position) {
       ctx.beginPath()
@@ -44,7 +56,7 @@ function Canvas({ id }: Id) {
     }
   }
 
-  function computePointInCavas(clientX: number, clientY: number) {
+  function computePointInCanvas(clientX: number, clientY: number) {
     if (canvasRef.current && clientX && clientY) {
       const boundingRect = canvasRef.current.getBoundingClientRect()
 
@@ -71,38 +83,22 @@ function Canvas({ id }: Id) {
     setSize(() => +evnt.target.value)
   }
 
+  function handleColor(color: string) {
+    setColor(() => color)
+  }
+
   return (
-    <>
-      <div className="container">
-        <div className="item item-1" style={{}}>
-          <input type="range" value={size} max={40} onChange={handleSize} />
-          <input
-            type="color"
-            value={color}
-            onChange={(e) => {
-              setColor(e.target.value)
-            }}
+    <div style={{ backgroundColor: '#008080' }}>
+      <div className="container max-w-6xl overflow-hidden ">
+        <div className="relative">
+          <img src="/images/top-part.png" alt="" className="w-full" />
+          <img
+            src="/images/left-part.png"
+            alt=""
+            className="absolute h-screen top-28 left-0 bottom-4 "
           />
-          <button
-            onClick={() => {
-              const ctx: any = canvasCTX
-              if (ctx && canvasRef.current) {
-                ctx.clearRect(
-                  0,
-                  0,
-                  canvasRef.current.width,
-                  canvasRef.current.height
-                )
-              }
-            }}
-          >
-            Clear
-          </button>
-        </div>
-        <div className="item item-2 flex justify-center relative">
-          <img src="/images/paint.jpg" alt="paintImg" className=" w-9/12 " />
           <canvas
-            className="absolute left-80 top-28 w-7/12 h-4/6"
+            style={{ backgroundColor: 'white' }}
             data-testid="canvas"
             id="canvas"
             ref={canvasRef}
@@ -112,12 +108,90 @@ function Canvas({ id }: Id) {
             onMouseUp={handleMouseUp}
           ></canvas>
         </div>
+        <div
+          className="p-5"
+          style={{
+            backgroundColor: '#bdbdbd',
+            border: '2px solid white',
+            borderTop: 'none',
+          }}
+        >
+          <div className="flex  mb-2">
+            <input
+              className="hover:cursor-pointer"
+              style={{ height: '55px', marginRight: '5px' }}
+              type="color"
+              value={color}
+              onChange={(e) => {
+                setColor(e.target.value)
+              }}
+            />
+            <div className="grid grid-cols-5 gap-1">
+              {colors.map((color) => (
+                <div
+                  className="hover: cursor-pointer"
+                  aria-label={color.color}
+                  style={{
+                    backgroundColor: color.hash,
+                    width: '25px',
+                    height: '25px',
+                    border: '2px outset whitesmoke',
+                  }}
+                  onClick={() => handleColor(color.hash)}
+                ></div>
+              ))}
+            </div>
+          </div>
+          <div className="flex gap-6">
+            <button
+              className="generalButton"
+              onClick={() => {
+                const ctx: any = canvasCTX
+                if (ctx && canvasRef.current) {
+                  ctx.clearRect(
+                    0,
+                    0,
+                    canvasRef.current.width,
+                    canvasRef.current.height
+                  )
+                }
+              }}
+            >
+              Clear
+            </button>
+            <SubmitButton
+              data={{ name: null, file: drawing, caption: null }}
+              id={id}
+            />
+          </div>
+          <input
+            className="hover:cursor-pointer"
+            type="range"
+            value={size}
+            max={40}
+            onChange={handleSize}
+          />
+          <div className="flex justify-between items-center">
+            <div
+              style={{
+                width: '15px',
+                height: '15px',
+                backgroundColor: 'black',
+                borderRadius: '8px',
+              }}
+            ></div>
+            <div
+              style={{
+                width: '35px',
+                height: '35px',
+                backgroundColor: 'black',
+                borderRadius: '18px',
+              }}
+            ></div>
+          </div>
+        </div>
       </div>
-      <SubmitButton
-        data={{ name: null, file: drawing, caption: null }}
-        id={id}
-      />
-    </>
+    </div>
   )
 }
 
