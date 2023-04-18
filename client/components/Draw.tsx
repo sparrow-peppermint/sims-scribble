@@ -16,10 +16,10 @@ function Draw() {
   }, [])
 
   return (
-    <>
-      <div className="container flex flex-col items-center space-y-8">
+    <div className="h-screen">
+      <div className="container flex justify-center pt-8">
         <div>
-          <div className="window">
+          <div className="window ">
             <div className="title-bar">
               <div className="title-bar-text">
                 Draw {state.name}&apos;s caption
@@ -30,25 +30,16 @@ function Draw() {
                 <button aria-label="Close"></button>
               </div>
             </div>
-            <div className="window-body">
-              <menu role="tablist">
-                <li role="tab" aria-selected="true">
-                  <a href="#tabs">Caption</a>
-                </li>
-              </menu>
-              <div className="window" role="tabpanel">
-                <div className="window-body">
-                  <h2>{state.caption}</h2>
-                </div>
-              </div>
+            <div className="window-body font-semibold text-base p-5">
+              <p className="text-xl">{state.caption}</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-blue-500">
-        <Canvas id={Number(id)} />
-      </div>
-    </>
+      <br />
+      <br />
+      <Canvas id={Number(id)} />
+    </div>
   )
 }
 
