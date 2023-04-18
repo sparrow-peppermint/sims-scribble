@@ -38,8 +38,8 @@ function Home() {
               <button aria-label="Close"></button>
             </div>
           </div>
-          <div className="window-body font-semibold text-base pl-5 pt-5">
-            <ul>
+          <div className="window-body font-semibold text-base p-5">
+            <ul className="tree-view">
               <li className="text-xl">
                 Player One writes a wacky prompt (secretly)
               </li>
@@ -56,15 +56,23 @@ function Home() {
               </li>
               <li className="text-xl">Enjoy your collective masterpiece!</li>
             </ul>
-            <div className="container flex flex-col pt-5">
-              <PlayerNames onNamesChange={handleNamesChange} />
+            <br />
+            <div>
+              <p className="flex justify-center font-windows pt-10">
+                Enter the names of your players (min 4)
+              </p>
+            </div>
+            <div className="container flex flex-col">
+              <div className="flex pr-20">
+                <PlayerNames onNamesChange={handleNamesChange} />
+              </div>
               <form>
-                <div className="flex justify-center p-5 gap-x-10">
+                <div className="flex justify-center p-5">
                   <button
                     onClick={handleSubmit}
                     type="submit"
                     aria-label="submit"
-                    className="generalButton"
+                    className="generalButton h-10"
                   >
                     Start
                   </button>
