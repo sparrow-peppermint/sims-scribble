@@ -52,6 +52,7 @@ it('Post / should reply with a status of 201', async () => {
   expect(response.status).toBe(201)
 })
 
+
 it('Patch / should reply with a status of 201', async () => {
   const data = {
     name: null,
@@ -64,4 +65,11 @@ it('Patch / should reply with a status of 201', async () => {
 
   expect(response.status).toBe(201)
   expect(response.body).toMatchObject({})
+
+it('Delete / should reply with a status of 200', async () => {
+  jest.mocked(db.resetData())
+  const response = await request(server).delete('/api/v1/game/')
+
+  expect(response.status).toBe(200)
+
 })

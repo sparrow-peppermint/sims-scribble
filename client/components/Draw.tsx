@@ -42,6 +42,8 @@ function Draw() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="bg-blue-500">
         <Canvas id={Number(id)} />
       </div>
     </>

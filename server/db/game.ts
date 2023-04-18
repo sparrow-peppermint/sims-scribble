@@ -15,4 +15,9 @@ export function addData(data: Input, db = connection) {
 
 export function updateData(id: number, data: Input, db = connection) {
   return db('data').where('id', id).update(data)
+
+export async function resetData(db = connection) {
+  await db('data').del()
+
+  await db('sqlite_sequence').where('name', 'data').update({ seq: 0 })
 }

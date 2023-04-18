@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="min-h-screen bg-cover bg-teal">
+    <div className="min-h-screen bg-cover bg-teal containter">
       <Header />
 
       <div className="containter flex flex-col mx-48">
