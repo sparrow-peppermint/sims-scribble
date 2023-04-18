@@ -22,3 +22,7 @@ export async function resetData(db = connection) {
 
   await db('sqlite_sequence').where('name', 'data').update({ seq: 0 })
 }
+
+export async function softReset(db = connection) {
+  await db('data').update({ caption: null, file: null })
+}

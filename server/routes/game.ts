@@ -52,4 +52,13 @@ router.delete('/', async (req, res) => {
   }
 })
 
+router.delete('/reset', async (req, res) => {
+  try {
+    await db.softReset()
+    res.sendStatus(200)
+  } catch (error) {
+    if (error instanceof Error) res.status(500).send('DataBase Error')
+  }
+})
+
 export default router

@@ -21,6 +21,10 @@ export async function resetPlayers() {
   await request.delete(rootUrl)
 }
 
+export async function softResetPlayers() {
+  await request.delete(`${rootUrl}/reset`)
+}
+
 export async function updateDataById(id: number, data: object) {
   try {
     const response = await request.patch(rootUrl + `/${id}`).send(data)
