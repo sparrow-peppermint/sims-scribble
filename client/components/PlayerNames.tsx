@@ -26,7 +26,7 @@ function PlayerNames(props: Props) {
   return (
     <>
       <div className="flex p-5 gap-x-10">
-        <form className="flex flex-row" onSubmit={handleSubmit}>
+        <form className=" flex flex-row" onSubmit={handleSubmit}>
           <div className="pr-5">
             <input
               className="h-10 min-w-100 text-lg"
@@ -34,7 +34,7 @@ function PlayerNames(props: Props) {
               onChange={handleChange}
             ></input>
           </div>
-          <button className="generalButton" type="submit">
+          <button className="generalButton max-h-10" type="submit">
             Add Player
           </button>
         </form>

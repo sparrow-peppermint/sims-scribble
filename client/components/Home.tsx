@@ -19,9 +19,11 @@ function Home() {
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault()
     const numberOfPlayers = names.length
+    if (numberOfPlayers > 3) {
+      dispatch(players(numberOfPlayers))
+    }
     console.log(numberOfPlayers)
     // setInput(input)
-    dispatch(players(numberOfPlayers))
 
     navigate('/start')
   }
