@@ -43,7 +43,7 @@ function NextPlayer(props: Id) {
                 className="generalButton scale-150"
                 onClick={handleSubmit}
               >
-                {player.name} Ready!{' '}
+                Ready!{' '}
               </button>
             </div>
           </div>
