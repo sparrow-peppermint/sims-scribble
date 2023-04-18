@@ -13,8 +13,9 @@ export function addData(data: Input, db = connection) {
   return db('data').insert(data)
 }
 
-export function updateData(id: number, data: Input, db = connection) {
+export function updateData(id: number, data: object, db = connection) {
   return db('data').where('id', id).update(data)
+}
 
 export async function resetData(db = connection) {
   await db('data').del()
