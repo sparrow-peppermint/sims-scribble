@@ -20,3 +20,12 @@ export async function addData(data: Input) {
 export async function resetPlayers() {
   await request.delete(rootUrl)
 }
+
+export async function updateDataById(id: number, data: object) {
+  try {
+    const response = await request.patch(rootUrl + `/${id}`).send(data)
+    console.log('Data updated:', response.body)
+  } catch (error) {
+    console.error('Error updating Data:', error)
+  }
+}
