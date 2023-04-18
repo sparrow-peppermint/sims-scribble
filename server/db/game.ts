@@ -1,10 +1,5 @@
+import { Input } from '../../models/Data'
 import connection from './connection'
-
-interface Data {
-  name: string | null
-  file: string | null
-  caption: string | null
-}
 
 export function getData(db = connection) {
   return db('data').select()
@@ -14,9 +9,12 @@ export function getDataById(id: number, db = connection) {
   return db('data').where('id', id).select().first()
 }
 
-export function addData(data: Data, db = connection) {
+export function addData(data: Input, db = connection) {
   return db('data').insert(data)
 }
+
+export function updateData(id: number, data: Input, db = connection) {
+  return db('data').where('id', id).update(data)
 
 export async function resetData(db = connection) {
   await db('data').del()
