@@ -13,7 +13,7 @@ function Display() {
 
   async function handleReset() {
     await resetPlayers()
-    navigate('/start')
+    navigate('/')
   }
 
   return (
