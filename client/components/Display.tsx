@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getData, resetPlayers } from '../../client/apis/api'
+import { getData, resetPlayers, softResetPlayers } from '../../client/apis/api'
 import { useNavigate } from 'react-router-dom'
 
 function Display() {
@@ -13,6 +13,11 @@ function Display() {
 
   async function handleReset() {
     await resetPlayers()
+    navigate('/')
+  }
+
+  async function handleSoftReset() {
+    await softResetPlayers()
     navigate('/')
   }
 
@@ -57,7 +62,8 @@ function Display() {
           }
         })}
       </div>
-      <button onClick={handleReset}>Play Again?</button>
+      <button onClick={handleSoftReset}>Play Again?</button>
+      <button onClick={handleReset}>Play Again With New Players?</button>
     </>
   )
 }
