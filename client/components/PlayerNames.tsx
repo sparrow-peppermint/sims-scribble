@@ -1,6 +1,4 @@
 import { addData } from '../apis/api'
-import { useNavigate } from 'react-router-dom'
-import { Data, PropsData } from '../../models/Data'
 import { useState } from 'react'
 
 interface Props {
@@ -42,6 +40,3 @@ function PlayerNames(props: Props) {
   )
 }
 export default PlayerNames
-
-//redirect to pass
-//adds input to db
