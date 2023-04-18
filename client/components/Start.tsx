@@ -1,8 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { getDataById } from '../apis/api'
+import { useParams } from 'react-router-dom'
 import SubmitButton from './SubmitButton'
+import { Input } from '../../models/Data'
 
 function Start() {
   const [input, setInput] = useState('')
+  const [player, setPlayer] = useState({} as Input)
+
+  useEffect(() => {
+    getDataById(2)
+      .then((res) => setPlayer(res))
+      .catch((err) => console.error(err.message))
+  }, [])
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value
@@ -26,7 +36,7 @@ function Start() {
                 </div>
               </div>
               <div className="window-body font-semibold text-base p-2">
-                <p> Write a wacky prompt for Player 2 to draw</p>
+                <p> Write a wacky prompt for {player.name} to draw</p>
                 <div className="flex justify-center py-8">
                   <form>
                     <label>

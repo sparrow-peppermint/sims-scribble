@@ -21,7 +21,9 @@ function Draw() {
         <div>
           <div className="window">
             <div className="title-bar">
-              <div className="title-bar-text">Draw the caption</div>
+              <div className="title-bar-text">
+                Draw {state.name}&apos;s caption
+              </div>
               <div className="title-bar-controls">
                 <button aria-label="Minimize"></button>
                 <button aria-label="Maximize"></button>

@@ -1,8 +1,15 @@
 import { useNavigate } from 'react-router-dom'
 import { Id } from '../../models/Type'
+import { useParams } from 'react-router-dom'
+
+import { useEffect, useState } from 'react'
+import { getDataById } from '../apis/api'
+import { Input } from '../../models/Data'
 
 function NextPlayer(props: Id) {
   const navigate = useNavigate()
+  const { id } = useParams()
+  const [player, setPlayer] = useState({} as Input)
 
   function handleSubmit() {
     if (props.id % 2 === 0) {
@@ -10,13 +17,19 @@ function NextPlayer(props: Id) {
     } else navigate(`/write/${props.id}`)
   }
 
+  useEffect(() => {
+    getDataById(Number(id) + 1)
+      .then((res) => setPlayer(res))
+      .catch((err) => console.error(err.message))
+  }, [])
+
   return (
     <div className="h-screen">
       <div className="container flex justify-center pt-10">
         <div className="window w-2/3">
           <div className="title-bar">
             <div className="title-bar-text text-base">
-              Your Turn Player {props.id}
+              Your Turn {player.name}
             </div>
             <div className="title-bar-controls">
               <button aria-label="Minimize"></button>
@@ -30,7 +43,7 @@ function NextPlayer(props: Id) {
                 className="generalButton scale-150"
                 onClick={handleSubmit}
               >
-                Player {props.id} Ready!{' '}
+                {player.name} Ready!{' '}
               </button>
             </div>
           </div>

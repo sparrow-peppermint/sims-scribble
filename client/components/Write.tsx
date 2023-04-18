@@ -6,7 +6,8 @@ import { Input } from '../../models/Data'
 
 function Write() {
   const [input, setInput] = useState('')
-  const [name, setName] = useState('')
+  const [player, setPlayer] = useState({} as Input)
+
   const { id } = useParams()
   const [image, setImage] = useState({} as Input)
 
@@ -18,7 +19,7 @@ function Write() {
 
   useEffect(() => {
     getDataById(Number(id))
-      .then((res) => setName(res.name))
+      .then((res) => setPlayer(res))
       .catch((err) => console.error(err.message))
   }, [])
 
@@ -32,7 +33,9 @@ function Write() {
       <div className="container flex justify-center pt-10">
         <div className="window w-2/3">
           <div className="title-bar">
-            <div className="title-bar-text text-base">What a cool artwork!</div>
+            <div className="title-bar-text text-base">
+              What a cool artwork by {image.name}!
+            </div>
             <div className="title-bar-controls">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>
@@ -49,7 +52,7 @@ function Write() {
                   className=""
                 />
               )}
-              <h4>Caption this drawing</h4>
+              <h4>{player.name}, caption this drawing</h4>
               <input
                 onChange={handleChange}
                 placeholder="frog smoking a pipe..."
