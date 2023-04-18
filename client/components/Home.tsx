@@ -5,22 +5,23 @@ import { players } from '../slices/game'
 import PlayerNames from './PlayerNames'
 
 function Home() {
-  const slice = useAppSelector((state) => state.players)
-  console.log(slice)
-  const [input, setInput] = useState(slice)
+  // const slice = useAppSelector((state) => state.players)
+  // console.log(slice)
+  // const [input, setInput] = useState(slice)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
-  // function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-  //   const noOfPlayers = Number(event.target.value)
-  //   setInput(noOfPlayers)
-  // }
+  const [names, setNames] = useState<string[]>([])
+  function handleNamesChange(newNames: string[]) {
+    setNames(newNames)
+  }
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault()
-    setInput(input)
-    dispatch(players(input))
-    console.log(input)
+    const numberOfPlayers = names.length
+    console.log(numberOfPlayers)
+    // setInput(input)
+    dispatch(players(numberOfPlayers))
 
     navigate('/start')
   }
@@ -56,10 +57,8 @@ function Home() {
               <li className="text-xl">Enjoy your collective masterpiece!</li>
             </ul>
             <div className="container flex justify-center pt-5">
-              <h4>Enter the names of the players</h4>
-              <PlayerNames />
+              <PlayerNames onNamesChange={handleNamesChange} />
               <form>
-                <h5>Enter the number of players</h5>
                 <div className="flex justify-center p-5 gap-x-10">
                   <button
                     onClick={handleSubmit}

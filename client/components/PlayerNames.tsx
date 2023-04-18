@@ -3,8 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { Data, PropsData } from '../../models/Data'
 import { useState } from 'react'
 
-function PlayerNames() {
-  const navigate = useNavigate()
+interface Props {
+  onNamesChange: (newNames: string[]) => void
+}
+
+function PlayerNames(props: Props) {
   const [input, setInput] = useState('')
   const [names, setNames] = useState<string[]>([])
 
@@ -15,7 +18,9 @@ function PlayerNames() {
 
   function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault()
-    setNames([...names, input])
+    const newNames = [...names, input]
+    setNames(newNames)
+    props.onNamesChange(newNames)
     addData({ name: input, file: null, caption: null })
     setInput(() => '')
   }
