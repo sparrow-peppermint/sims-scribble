@@ -18,7 +18,7 @@ function NextPlayer(props: Id) {
   }
 
   useEffect(() => {
-    getDataById(Number(id) + 1)
+    getDataById(Number(id))
       .then((res) => setPlayer(res))
       .catch((err) => console.error(err.message))
   }, [])
@@ -43,7 +43,7 @@ function NextPlayer(props: Id) {
                 className="generalButton scale-150"
                 onClick={handleSubmit}
               >
-                {player.name} Ready!{' '}
+                Ready!{' '}
               </button>
             </div>
           </div>

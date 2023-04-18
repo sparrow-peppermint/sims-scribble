@@ -1,6 +1,4 @@
 import { addData } from '../apis/api'
-import { useNavigate } from 'react-router-dom'
-import { Data, PropsData } from '../../models/Data'
 import { useState } from 'react'
 
 interface Props {
@@ -27,12 +25,19 @@ function PlayerNames(props: Props) {
 
   return (
     <>
-      <div>
+      <div className="flex justify-center p-5 gap-x-10">
         <form onSubmit={handleSubmit}>
-          <input type="text" value={input} onChange={handleChange}></input>
-          <button type="submit">Add Player</button>
+          <input
+            className="h-20"
+            type="text"
+            value={input}
+            onChange={handleChange}
+          ></input>
+          <button className="generalButton" type="submit">
+            Add Player
+          </button>
         </form>
-        <ul>
+        <ul className="text-lg">
           {names.map((name, index) => (
             <li key={index}>{name}</li>
           ))}
@@ -42,6 +47,3 @@ function PlayerNames(props: Props) {
   )
 }
 export default PlayerNames
-
-//redirect to pass
-//adds input to db

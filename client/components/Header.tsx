@@ -9,7 +9,7 @@ function Header() {
           <Link to="/" className="hover:text-black focus:text-black">
             <img
               src="/images/windows-logo.png"
-              alt=""
+              alt="logo"
               className="w-20 pb-4 pr-2"
             />
           </Link>
