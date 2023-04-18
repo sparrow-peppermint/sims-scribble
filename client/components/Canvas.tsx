@@ -160,7 +160,7 @@ function Canvas({ id }: Id) {
               Clear
             </button>
             <SubmitButton
-              data={{  file: drawing, caption: null }}
+              data={{ file: drawing, caption: null }}
               id={id}
             />
           </div>
