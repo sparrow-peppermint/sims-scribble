@@ -89,7 +89,7 @@ function Canvas({ id }: Id) {
 
   return (
     <div style={{ backgroundColor: '#008080' }}>
-      <div className="container grid grid-cols-8 max-w-5xl ">
+      <div className="container grid grid-cols-8 max-w-2xl ">
         <img
           src="/images/top-part.png"
           alt=""
@@ -99,8 +99,8 @@ function Canvas({ id }: Id) {
         <canvas
           style={{ backgroundColor: 'white' }}
           className="col-span-6"
-          height={578}
-          width={890}
+          height={378}
+          width={580}
           data-testid="canvas"
           id="canvas"
           ref={canvasRef}
@@ -112,7 +112,7 @@ function Canvas({ id }: Id) {
         <img
           src="/images/right-part.jpeg"
           alt=""
-          className="col-span-1 h-full w-6 justify-self-end selector"
+          className="col-span-1 h-full w-4 justify-self-end selector"
         />
         <div
           className="col-span-8 p-5"
