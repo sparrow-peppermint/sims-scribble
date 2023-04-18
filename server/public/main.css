@@ -3,12 +3,12 @@
   background-color: #b5b5b5;
 }
 
-
 .textInput {
-
-  font-size:medium;
+  font-size: medium;
   width: 100%;
-
   transform: scale(1.2);
 }
 
+.imgGrid {
+  grid-template-columns: 1fr 6fr 25px;
+}
