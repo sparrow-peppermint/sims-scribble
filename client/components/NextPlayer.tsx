@@ -18,7 +18,7 @@ function NextPlayer(props: Id) {
   }
 
   useEffect(() => {
-    getDataById(Number(id) + 1)
+    getDataById(Number(id))
       .then((res) => setPlayer(res))
       .catch((err) => console.error(err.message))
   }, [])
