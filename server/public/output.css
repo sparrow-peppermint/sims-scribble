@@ -627,9 +627,19 @@ video {
   background-color: rgb(0 128 128 / var(--tw-bg-opacity));
 }
 
+
+.bg-paint {
+  background-image: url('/images/paint.jpg');
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
 .bg-cover {
   background-size: cover;
 }
+
 
 .p-2 {
   padding: 0.5rem;
@@ -643,9 +653,14 @@ video {
   padding: 1.25rem;
 }
 
+
+.p-8 {
+  padding: 2rem;
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+
 }
 
 .pb-4 {
@@ -680,6 +695,7 @@ video {
   padding-top: 1.25rem;
 }
 
+
 .pt-8 {
   padding-top: 2rem;
 }
@@ -687,6 +703,7 @@ video {
 .text-center {
   text-align: center;
 }
+
 
 .text-end {
   text-align: end;
