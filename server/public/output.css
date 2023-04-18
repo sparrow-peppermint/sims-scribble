@@ -606,6 +606,10 @@ video {
   height: 100vh;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -693,6 +697,10 @@ video {
   background-size: cover;
 }
 
+.object-right {
+  object-position: right;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -744,6 +752,10 @@ video {
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-end {

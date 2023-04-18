@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { getData, resetPlayers } from '../../client/apis/api'
 import { useNavigate } from 'react-router-dom'
+import { Input } from '../../models/Data'
 
 function Display() {
   const [data, setData] = useState([])
+
   const navigate = useNavigate()
   useEffect(() => {
     getData()
@@ -25,14 +27,18 @@ function Display() {
           if (id % 2 == 0) {
             return (
               <>
-                <div className="window flex justify-center flex-col">
-                  <div className="window-body">
-                    <img key={id} src={file} alt="players drawing" />
+                <div className="window ">
+                  <div className="window-body flex justify-center flex-col">
+                    <img
+                      key={id}
+                      src={file}
+                      alt="players drawing"
+                      className="object-right"
+                    />
+                    <h4 className="text-center">{name}</h4>
                   </div>
                   <div className="m-8">
-                    <ul key={id} className="tree-view">
-                      caption
-                    </ul>
+                    {/* <ul key={id} className="tree-view"></ul> */}
                   </div>
                 </div>
               </>
@@ -41,9 +47,9 @@ function Display() {
             return (
               <>
                 <div className="window">
-                  <div className="title-bar">
-                    <p className="title-bar-text" key={id}>
-                      {caption}
+                  <div className="title-bar h-10">
+                    <p className="title-bar-text text-lg" key={id}>
+                      {caption} - {name}
                     </p>
                     <div className="title-bar-controls">
                       <button aria-label="Minimize"></button>
