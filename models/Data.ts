@@ -1,5 +1,5 @@
 export interface Input {
-  name: string | null
+  name?: string | null
   file: string | null
   caption: string | null
 }

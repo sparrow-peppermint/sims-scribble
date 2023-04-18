@@ -42,7 +42,7 @@ function Start() {
 
                   <div className="ml-10">
                     <SubmitButton
-                      data={{ name: null, file: null, caption: input }}
+                      data={{ file: null, caption: input }}
                       id={1}
                     />
                   </div>

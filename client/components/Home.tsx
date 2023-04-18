@@ -2,31 +2,32 @@ import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { useNavigate } from 'react-router-dom'
 import { players } from '../slices/game'
+import PlayerNames from './PlayerNames'
 
 function Home() {
-  const slice = useAppSelector((state) => state.players)
-  console.log(slice)
-  const [input, setInput] = useState(slice)
+  // const slice = useAppSelector((state) => state.players)
+  // console.log(slice)
+  // const [input, setInput] = useState(slice)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
-  function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    const noOfPlayers = Number(event.target.value)
-    setInput(noOfPlayers)
+  const [names, setNames] = useState<string[]>([])
+  function handleNamesChange(newNames: string[]) {
+    setNames(newNames)
   }
 
   function handleSubmit(event: React.MouseEvent<HTMLButtonElement>) {
     event.preventDefault()
-    setInput(input)
-    dispatch(players(input))
-    console.log(input)
+    const numberOfPlayers = names.length
+    console.log(numberOfPlayers)
+    // setInput(input)
+    dispatch(players(numberOfPlayers))
 
     navigate('/start')
   }
 
   return (
     <div className="h-screen">
-
       <div className="container flex justify-center pt-8">
         <div className="window w-8/10">
           <div className="title-bar">
@@ -56,24 +57,9 @@ function Home() {
               <li className="text-xl">Enjoy your collective masterpiece!</li>
             </ul>
             <div className="container flex justify-center pt-5">
+              <PlayerNames onNamesChange={handleNamesChange} />
               <form>
-                <h5>Enter the number of players</h5>
                 <div className="flex justify-center p-5 gap-x-10">
-                  <select
-                    onChange={handleChange}
-                    className="scale-150 text-end"
-                  >
-                    <option value={4}>4</option>
-                    <option value={5}>5</option>
-                    <option value={6}>6</option>
-                    <option value={7}>7</option>
-                    <option value={8}>8</option>
-                    <option value={9}>9</option>
-                    <option value={10}>10</option>
-                    <option value={11}>11</option>
-                    <option value={12}>12</option>
-                  </select>
-
                   <button
                     onClick={handleSubmit}
                     type="submit"

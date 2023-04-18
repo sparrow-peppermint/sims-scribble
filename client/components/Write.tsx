@@ -6,6 +6,7 @@ import { Input } from '../../models/Data'
 
 function Write() {
   const [input, setInput] = useState('')
+  const [name, setName] = useState('')
   const { id } = useParams()
   const [image, setImage] = useState({} as Input)
 
@@ -15,13 +16,18 @@ function Write() {
       .catch((err) => console.error(err.message))
   }, [])
 
+  useEffect(() => {
+    getDataById(Number(id))
+      .then((res) => setName(res.name))
+      .catch((err) => console.error(err.message))
+  }, [])
+
   function handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     const value = evt.target.value
     setInput(() => value)
   }
 
   return (
-
     <div className="h-screen">
       <div className="container flex justify-center pt-10">
         <div className="window w-2/3">
@@ -50,7 +56,7 @@ function Write() {
               ></input>
 
               <SubmitButton
-                data={{ name: null, file: null, caption: input }}
+                data={{ file: null, caption: input }}
                 id={Number(id)}
               />
             </div>

@@ -1,13 +1,14 @@
 import { addData } from '../apis/api'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Data, PropsData } from '../../models/Data'
+import { PropsData } from '../../models/Data'
+import { updateDataById } from '../apis/api'
 
 function SubmitButton(props: PropsData) {
   const navigate = useNavigate()
 
   function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault()
-    addData(props.data)
+    updateDataById(props.id, props.data)
     navigate(`/pass/${props.id + 1}`)
   }
 
