@@ -7,10 +7,17 @@ import { Input } from '../../models/Data'
 function Start() {
   const [input, setInput] = useState('')
   const [player, setPlayer] = useState({} as Input)
+  const [currentplayer, setcurrentPlayer] = useState({} as Input)
 
   useEffect(() => {
     getDataById(2)
       .then((res) => setPlayer(res))
+      .catch((err) => console.error(err.message))
+  }, [])
+
+  useEffect(() => {
+    getDataById(1)
+      .then((res) => setcurrentPlayer(res))
       .catch((err) => console.error(err.message))
   }, [])
 
@@ -27,7 +34,7 @@ function Start() {
             <div className="window w-2/3">
               <div className="title-bar">
                 <div className="title-bar-text text-base">
-                  Your Wacky Prompt
+                  {currentplayer.name}&apos;s Wacky Prompt
                 </div>
                 <div className="title-bar-controls">
                   <button aria-label="Minimize"></button>
