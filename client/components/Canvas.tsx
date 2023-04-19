@@ -11,16 +11,16 @@ function Canvas({ id }: Id) {
   const [drawing, setDrawing] = useState('')
 
   const colors = [
-    { color: 'black', hash: '#000000' },
-    { color: 'darkgrey', hash: '#5c5c5c' },
-    { color: 'red', hash: '#ff0000' },
-    { color: 'blue', hash: '#0000ff' },
-    { color: 'green', hash: '#00ff00' },
-    { color: 'orange', hash: '#ff9238' },
-    { color: 'purple', hash: '#ae00ff' },
-    { color: 'pink', hash: '#ff24f8' },
-    { color: 'skyblue', hash: '#00aaff' },
-    { color: 'darkgreen', hash: '#096902' },
+    { color: 'red', hash: '#E74C3C' },
+    { color: 'pink', hash: '#F39BF4' },
+    { color: 'purple', hash: '#8E44AD' },
+    { color: 'blue', hash: '#5DADE2' },
+    { color: 'navy', hash: '#1B4F72' },
+    { color: 'green', hash: '#2ECC71' },
+    { color: 'yellow', hash: '#F4D03F' },
+    { color: 'orange', hash: '#DC7633' },
+    { color: 'gray', hash: '#707B7C' },
+    { color: 'black', hash: '#17202A' },
   ]
 
   useEffect(() => {
