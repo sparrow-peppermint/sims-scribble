@@ -69,7 +69,7 @@ function Home() {
                 <PlayerNames onNamesChange={handleNamesChange} />
               </div>
               <form>
-                <div className="flex justify-center p-5">
+                <div className="w-full flex justify-end p-5">
                   <button
                     onClick={handleSubmit}
                     type="submit"

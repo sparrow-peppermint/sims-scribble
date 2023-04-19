@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getData, resetPlayers, softResetPlayers } from '../../client/apis/api'
 import { useNavigate } from 'react-router-dom'
-import { Input } from '../../models/Data'
 
 function Display() {
   const [data, setData] = useState([])
@@ -25,14 +24,18 @@ function Display() {
 
   return (
     <>
-      <div className="mb-10">
-        {data.map((turn) => {
+      <div className="mb-10 min-h-screen font-semibold parent">
+        {data.map((turn, index) => {
           const { id, name, file, caption } = turn
-
+          const delay = index * 2000
           if (id % 2 == 0) {
             return (
-              <>
-                <div className="window ">
+              <div
+                key={id}
+                className="container flex justify-center drawings"
+                style={{ transitionDelay: `${delay}ms` }}
+              >
+                <div className="window w-2/3">
                   <div className="window-body flex justify-center flex-col">
                     <img
                       key={id}
@@ -46,12 +49,16 @@ function Display() {
                     {/* <ul key={id} className="tree-view"></ul> */}
                   </div>
                 </div>
-              </>
+              </div>
             )
           } else {
             return (
-              <>
-                <div className="window">
+              <div
+                key={id}
+                className="container flex justify-center drawings"
+                style={{ transitionDelay: `${delay}ms` }}
+              >
+                <div className="window w-2/3">
                   <div className="title-bar h-10">
                     <p className="title-bar-text text-lg" key={id}>
                       {caption} - {name}
@@ -63,13 +70,19 @@ function Display() {
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             )
           }
         })}
+        <div className="flex justify-center mt-10">
+          <button className="generalButton h-10 " onClick={handleSoftReset}>
+            Play Again?
+          </button>
+          <button className="generalButton h-10 " onClick={handleReset}>
+            Play Again With New Players?
+          </button>
+        </div>
       </div>
-      <button onClick={handleSoftReset}>Play Again?</button>
-      <button onClick={handleReset}>Play Again With New Players?</button>
     </>
   )
 }
