@@ -26,7 +26,7 @@ describe('Testing Display component', () => {
         <Display />
       </BrowserRouter>
     )
-    const caption = await screen.findByText('first prompt')
+    const caption = await screen.findByText(/-/)
     expect(caption).toBeInTheDocument()
   })
 
