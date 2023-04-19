@@ -17,10 +17,10 @@ describe('Testing the Home component', () => {
     )
     const description = screen.getAllByRole('listitem')
     expect(description[0].innerHTML).toBe(
-      'Player One writes a secret whacky caption, then passes the device to the next player'
+      'Player One writes a wacky prompt (secretly)'
     )
   }),
-    test('If player number input is rendering on page', () => {
+    test('If add player instructions render', () => {
       render(
         <Provider store={store}>
           <Router>
@@ -28,7 +28,12 @@ describe('Testing the Home component', () => {
           </Router>
         </Provider>
       )
-      const input = screen.getByRole('combobox')
-      expect(input).toBeInTheDocument()
+      const actual = screen.getByText(
+        /enter the names of your players \(min 4\)/i
+      )
+
+      expect(actual.innerHTML).toMatch(
+        'Enter the names of your players (min 4)'
+      )
     })
 })
