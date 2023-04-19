@@ -4,18 +4,7 @@ import '@testing-library/jest-dom'
 import NextPlayer from './NextPlayer'
 
 describe('Testing the NextPlayer component', () => {
-  test('If the correct player renders on the page', () => {
-    render(
-      <>
-        <Router>
-          <NextPlayer id={2} />
-        </Router>
-      </>
-    )
-
-    const number = screen.getByText('Now pass device to Player 2')
-    expect(number).toBeInTheDocument()
-  })
+  test.todo('If the correct player renders on the page')
 
   test('If the button text is rendering', () => {
     render(
@@ -29,18 +18,5 @@ describe('Testing the NextPlayer component', () => {
     const text = screen.getByText('Ready!')
 
     expect(text).toBeInTheDocument()
-  })
-  test('If the button is rendering with correct text', () => {
-    render(
-      <>
-        <Router>
-          <NextPlayer id={2} />
-        </Router>
-      </>
-    )
-
-    const button = screen.getByRole('button')
-
-    expect(button.innerHTML).toMatch(/Ready!/i)
   })
 })

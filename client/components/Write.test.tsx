@@ -5,13 +5,13 @@ import Write from './Write'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 describe('Testing the Write component', () => {
-  test('If the h2 is rendering on the page', () => {
+  test('If the h4 is rendering on the page', () => {
     render(
       <Router>
         <Write />
       </Router>
     )
-    const heading = screen.getByRole('heading', { level: 2 })
+    const heading = screen.getByRole('heading', { level: 4 })
     expect(heading).toBeInTheDocument()
   }),
     test('if the input is rendering on the page', () => {
