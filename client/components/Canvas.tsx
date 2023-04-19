@@ -27,8 +27,8 @@ function Canvas({ id }: Id) {
     const canvas = canvasRef.current as HTMLCanvasElement | null
     if (canvas) {
       const ctx = canvas.getContext('2d') as any
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      // canvas.width = window.innerWidth - 350
+      // canvas.height = window.innerHeight - 200
       setCanvasCTX(ctx)
     }
   }, [canvasRef])
@@ -89,27 +89,33 @@ function Canvas({ id }: Id) {
 
   return (
     <div style={{ backgroundColor: '#008080' }}>
-      <div className="container max-w-6xl overflow-hidden ">
-        <div className="relative">
-          <img src="/images/top-part.png" alt="" className="w-full" />
-          <img
-            src="/images/left-part.png"
-            alt=""
-            className="absolute h-screen top-28 left-0 bottom-4 "
-          />
-          <canvas
-            style={{ backgroundColor: 'white' }}
-            data-testid="canvas"
-            id="canvas"
-            ref={canvasRef}
-            onMouseEnter={(e) => SetPos(e)}
-            onMouseDown={(e) => SetPos(e)}
-            onMouseMove={(e) => Draw(e)}
-            onMouseUp={handleMouseUp}
-          ></canvas>
-        </div>
+      <div className="container grid grid-cols-8 max-w-2xl ">
+        <img
+          src="/images/top-part.png"
+          alt=""
+          className="col-span-8 w-full selector"
+        />
+        <img src="/images/left-part.png" alt="" className="w-full selector" />
+        <canvas
+          style={{ backgroundColor: 'white' }}
+          className="col-span-6"
+          height={378}
+          width={580}
+          data-testid="canvas"
+          id="canvas"
+          ref={canvasRef}
+          onMouseEnter={(e) => SetPos(e)}
+          onMouseDown={(e) => SetPos(e)}
+          onMouseMove={(e) => Draw(e)}
+          onMouseUp={handleMouseUp}
+        ></canvas>
+        <img
+          src="/images/right-part.jpeg"
+          alt=""
+          className="col-span-1 h-full w-4 justify-self-end selector"
+        />
         <div
-          className="p-5"
+          className="col-span-8 p-5"
           style={{
             backgroundColor: '#bdbdbd',
             border: '2px solid white',
@@ -159,10 +165,7 @@ function Canvas({ id }: Id) {
             >
               Clear
             </button>
-            <SubmitButton
-              data={{ file: drawing, caption: null }}
-              id={id}
-            />
+            <SubmitButton data={{ file: drawing, caption: null }} id={id} />
           </div>
           <input
             className="hover:cursor-pointer"
