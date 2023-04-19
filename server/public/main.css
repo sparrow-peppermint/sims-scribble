@@ -22,12 +22,10 @@
 }
 
 .drawings{
-  opacity: 0;
-  transform: translateX(-100%);
-  transition:  200ms;
+  opacity: 1;
+  transition:  500ms;
 }
 
 .parent:hover .drawings{
-  opacity: 1;
-  transform: translateY(0%);
+  opacity: 0;
 }
