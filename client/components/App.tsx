@@ -10,22 +10,19 @@ import { Link } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="min-h-screen bg-cover bg-teal containter">
+    <div className="min-h-screen bg-cover bg-teal">
       <Header />
 
-      <div className="containter flex flex-col mx-48">
+      <div className="flex flex-col mx-48">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/start" element={<Start />} />
           <Route path="/pass/:id" element={<Pass />} />
-
+          <Route path="/draw/:id" element={<Draw />} />
           <Route path="/write/:id" element={<Write />} />
           <Route path="/display" element={<Display />} />
         </Routes>
       </div>
-      <Routes>
-        <Route path="/draw/:id" element={<Draw />} />
-      </Routes>
     </div>
   )
 }
