@@ -33,8 +33,8 @@ function Home() {
       <div className="container flex justify-center pt-8">
         <div className="window w-8/10">
           <div className="title-bar">
-            <div className="title-bar-text text-base">How To Play</div>
-            <div className="title-bar-controls">
+            <div className="title-bar-text text-lg">How To Play</div>
+            <div className="title-bar-controls scale-150 pr-3">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>
               <button aria-label="Close"></button>

@@ -24,48 +24,53 @@ function Display() {
 
   return (
     <>
-      <div className="mb-10 min-h-screen font-semibold">
-        {data.map((turn) => {
+      <div className="mb-10 min-h-screen font-semibold parent">
+        {data.map((turn, index) => {
           const { id, name, file, caption } = turn
-
+          const delay = index * 2000
           if (id % 2 == 0) {
             return (
-              <>
-                <div key={id} className="container flex justify-center">
-                  <div className="window w-2/3">
-                    <div className="window-body flex justify-center flex-col">
-                      <img
-                        src={file}
-                        alt="players drawing"
-                        className="object-right"
-                      />
-                      <h4 className="text-center">{name}</h4>
-                    </div>
-                    <div className="m-8">
-                      {/* <ul key={id} className="tree-view"></ul> */}
-                    </div>
+              <div
+                key={id}
+                className="container flex justify-center drawings"
+                style={{ transitionDelay: `${delay}ms` }}
+              >
+                <div className="window w-2/3">
+                  <div className="window-body flex justify-center flex-col">
+                    <img
+                      key={id}
+                      src={file}
+                      alt="players drawing"
+                      className="object-right"
+                    />
+                    <h4 className="text-center">{name}</h4>
+                  </div>
+                  <div className="m-8">
+                    {/* <ul key={id} className="tree-view"></ul> */}
                   </div>
                 </div>
-              </>
+              </div>
             )
           } else {
             return (
-              <>
-                <div key={id} className="container flex justify-center">
-                  <div className="window w-2/3">
-                    <div className="title-bar h-10">
-                      <p className="title-bar-text text-lg" key={id}>
-                        {caption} - {name}
-                      </p>
-                      <div className="title-bar-controls">
-                        <button aria-label="Minimize"></button>
-                        <button aria-label="Maximize"></button>
-                        <button aria-label="Close"></button>
-                      </div>
+              <div
+                key={id}
+                className="container flex justify-center drawings"
+                style={{ transitionDelay: `${delay}ms` }}
+              >
+                <div className="window w-2/3">
+                  <div className="title-bar h-10">
+                    <p className="title-bar-text text-lg" key={id}>
+                      {caption} - {name}
+                    </p>
+                    <div className="title-bar-controls scale-150 pr-3">
+                      <button aria-label="Minimize"></button>
+                      <button aria-label="Maximize"></button>
+                      <button aria-label="Close"></button>
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             )
           }
         })}
