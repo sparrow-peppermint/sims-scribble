@@ -63,7 +63,7 @@ function Display() {
                     <p className="title-bar-text text-lg" key={id}>
                       {caption} - {name}
                     </p>
-                    <div className="title-bar-controls">
+                    <div className="title-bar-controls scale-150 pr-3">
                       <button aria-label="Minimize"></button>
                       <button aria-label="Maximize"></button>
                       <button aria-label="Close"></button>

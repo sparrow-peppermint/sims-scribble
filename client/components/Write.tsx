@@ -36,7 +36,7 @@ function Write() {
             <div className="title-bar-text text-base">
               What a cool artwork by {image.name}!
             </div>
-            <div className="title-bar-controls">
+            <div className="title-bar-controls scale-150 pr-3">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>
               <button aria-label="Close"></button>

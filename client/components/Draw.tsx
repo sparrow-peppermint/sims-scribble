@@ -23,7 +23,7 @@ function Draw() {
             <div className="title-bar-text text-base">
               Draw {state.name}&apos;s caption
             </div>
-            <div className="title-bar-controls">
+            <div className="title-bar-controls scale-150 pr-3">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>
               <button aria-label="Close"></button>

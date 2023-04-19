@@ -29,7 +29,7 @@ function Start() {
                 <div className="title-bar-text text-base">
                   Your Wacky Prompt
                 </div>
-                <div className="title-bar-controls">
+                <div className="title-bar-controls scale-150 pr-3">
                   <button aria-label="Minimize"></button>
                   <button aria-label="Maximize"></button>
                   <button aria-label="Close"></button>
