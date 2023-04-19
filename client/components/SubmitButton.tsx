@@ -1,4 +1,3 @@
-import { addData } from '../apis/api'
 import { useNavigate, useParams } from 'react-router-dom'
 import { PropsData } from '../../models/Data'
 import { updateDataById } from '../apis/api'
@@ -15,7 +14,11 @@ function SubmitButton(props: PropsData) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <button type="submit" aria-label="submit" className="generalButton">
+        <button
+          type="submit"
+          aria-label="submit"
+          className="generalButton h-10 "
+        >
           Submit
         </button>
       </form>

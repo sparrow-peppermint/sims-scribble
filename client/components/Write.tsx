@@ -54,14 +54,16 @@ function Write() {
               )}
               <h4>{player.name}, caption this drawing</h4>
               <input
+                className="h-10 min-w-100 text-lg mb-3 pl-2"
                 onChange={handleChange}
                 placeholder="frog smoking a pipe..."
               ></input>
-
-              <SubmitButton
-                data={{ file: null, caption: input }}
-                id={Number(id)}
-              />
+              <div className="w-full flex justify-end">
+                <SubmitButton
+                  data={{ file: null, caption: input }}
+                  id={Number(id)}
+                />
+              </div>
             </div>
           </div>
         </div>
