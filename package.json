@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "start": "ts-node server/index.ts",
-    "test": "jest --coverage",
+    "test": "jest",
     "test:watch": "jest --noStackTrace --watchAll",
     "dev": "run-p dev:client dev:server tailwind",
     "dev:client": "npm run webpack -- --watch",
@@ -59,6 +59,7 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.17.12",
     "@devacademy/eslint-config": "^1.8.0",
+    "@playwright/test": "^1.32.3",
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4",

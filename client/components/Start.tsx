@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getDataById } from '../apis/api'
-import { useParams } from 'react-router-dom'
+// import { useParams } from 'react-router-dom'
 import SubmitButton from './SubmitButton'
 import { Input } from '../../models/Data'
 

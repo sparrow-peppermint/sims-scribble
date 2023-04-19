@@ -21,7 +21,7 @@ function FinalPass() {
                 className="scale-150"
                 onClick={() => navigate('/display')}
               >
-                View the Masterpeice
+                View the Masterpiece
               </button>
             </div>
           </div>

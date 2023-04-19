@@ -10,8 +10,7 @@ test('Paragraph renders and has the correct text', () => {
       <FinalPass />
     </BrowserRouter>
   )
-
-  expect(screen.getByText('This is the end of the game')).toBeInTheDocument()
+  expect(screen.getByText('Game Complete!')).toBeInTheDocument()
 })
 
 test('Button renders and has the correct text', () => {
@@ -20,8 +19,6 @@ test('Button renders and has the correct text', () => {
       <FinalPass />
     </BrowserRouter>
   )
-
-  const button = screen.getByRole('button')
-
-  expect(button.innerHTML).toMatch(/masterpeice/i)
+  const button = screen.getByRole('button', { name: /view the masterpiece/i })
+  expect(button.innerHTML).toMatch(/View the Masterpiece/i)
 })

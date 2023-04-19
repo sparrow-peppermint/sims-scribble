@@ -12,9 +12,7 @@ describe('Testing the Start component', () => {
       </Router>
     )
     // ACT
-    const text = screen.getByText(
-      /enter a description as to what you want P2 to draw/
-    )
+    const text = screen.getByText(/Write a wacky prompt for/)
     // ASSERT
     expect(text).toBeInTheDocument()
   }),
@@ -50,9 +48,9 @@ describe('Testing the Start component', () => {
       </>
     )
     const input = screen.getByPlaceholderText(
-      'Enter prompt for user to draw'
+      'Enter prompt'
     ) as HTMLInputElement
 
-    expect(input.placeholder).toBe('Enter prompt for user to draw')
+    expect(input.placeholder).toBe('Enter prompt')
   })
 })
