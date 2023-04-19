@@ -24,13 +24,17 @@ function Display() {
 
   return (
     <>
-      <div className="mb-10 min-h-screen font-semibold">
-        {data.map((turn) => {
+      <div className="mb-10 min-h-screen font-semibold parent">
+        {data.map((turn, index) => {
           const { id, name, file, caption } = turn
-
+          const delay = index * 2000
           if (id % 2 == 0) {
             return (
-              <div className="container flex justify-center">
+              <div
+                key={id}
+                className="container flex justify-center drawings"
+                style={{ transitionDelay: `${delay}ms` }}
+              >
                 <div className="window w-2/3">
                   <div className="window-body flex justify-center flex-col">
                     <img
@@ -49,7 +53,11 @@ function Display() {
             )
           } else {
             return (
-              <div className="container flex justify-center">
+              <div
+                key={id}
+                className="container flex justify-center drawings"
+                style={{ transitionDelay: `${delay}ms` }}
+              >
                 <div className="window w-2/3">
                   <div className="title-bar h-10">
                     <p className="title-bar-text text-lg" key={id}>
