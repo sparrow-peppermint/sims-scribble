@@ -8,7 +8,7 @@ function FinalPass() {
       <div className="container flex justify-center pt-10">
         <div className="window w-2/3">
           <div className="title-bar">
-            <div className="title-bar-text text-base">Game Complete!</div>
+            <div className="title-bar-text text-lg">Game Complete!</div>
             <div className="title-bar-controls scale-150 pr-3">
               <button aria-label="Minimize"></button>
               <button aria-label="Maximize"></button>

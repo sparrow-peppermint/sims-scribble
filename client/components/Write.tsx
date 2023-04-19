@@ -33,7 +33,7 @@ function Write() {
       <div className="container flex justify-center pt-10">
         <div className="window w-2/3">
           <div className="title-bar">
-            <div className="title-bar-text text-base">
+            <div className="title-bar-text text-lg">
               What a cool artwork by {image.name}!
             </div>
             <div className="title-bar-controls scale-150 pr-3">
