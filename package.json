@@ -40,13 +40,14 @@
     ]
   },
   "dependencies": {
-    "@redux-devtools/extension": "^3.2.3",
     "98.css": "^0.1.20",
+    "@redux-devtools/extension": "^3.2.3",
     "express": "^4.17.2",
     "history": "^5.3.0",
     "knex": "^2.3.0",
     "matchers": "^0.0.1",
     "pg": "^8.8.0",
+    "socket.io": "^4.6.1",
     "sqlite3": "^5.1.2",
     "superagent": "7.1.1"
   },
