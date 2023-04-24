@@ -6,7 +6,12 @@ import gameRoutes from './routes/game'
 
 const server = express()
 const httpServer = http.createServer(server)
-const io = new Server(httpServer)
+const io = new Server(httpServer, {
+  cors:
+  {
+    origin: 'http://localhost:3000'
+  }
+})
 
 server.use(express.json())
 server.use(express.static(join(__dirname, 'public')))
