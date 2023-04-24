@@ -23,7 +23,7 @@ server.get('*', (_, res) => {
 })
 
 io.on('connection', (socket) => {
-  console.log(`a user connected on socket: ${socket}`)
+  console.log(`a user connected on socket: ${socket.id}`)
 })
 
-export default server
+export default httpServer
