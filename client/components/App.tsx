@@ -6,7 +6,6 @@ import Home from './Home'
 import Start from './Start'
 import Pass from './Pass'
 import Write from './Write'
-import { Link } from 'react-router-dom'
 
 function App() {
   return (
